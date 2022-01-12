@@ -1,0 +1,231 @@
+@charset 'utf-8';
+
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table, blockquote {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+a {color: inherit; text-decoration: inherit;}
+a img {border: none;}
+img {vertical-align: middle; max-width: 100%;}
+li {list-style: none;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i[class^="fa"] {position: relative; display: inline-block; vertical-align: middle;}
+i[class^="fa"] span {position: absolute; left: -9999px;}
+.ir-hidden {position: absolute !important; left: -9999px !important;}
+
+body {font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif; font-size: 14px; color: #000000; letter-spacing: -0.03em; background-color: #ffffff;}
+body.sub {padding: 64px 0 0 220px; transition: padding 0.5s;}
+body.sub.close {padding-left: 0;}
+
+#wrapper {overflow: hidden; min-width: 1200px;}
+#skip-nav {position: fixed; left: 0; top: -41px; width: 100%; line-height: 40px; text-align: center; font-size: 16px; color: #ffffff; background: rgba(100, 100, 0, 0.5); transition: top 0.3s; z-index: 100001;}
+#skip-nav:focus {top: 0;}
+
+
+#header {position: fixed; left: 0; top: 0; width: 100%; height: 64px; box-sizing: border-box; z-index: 10000; background-image: linear-gradient(90deg, rgba(107,29,253,1) 0%, rgba(252,69,186,1) 100%);}
+#header div.logo {position: relative; width: 220px; height: 100%; background-color: rgba(255, 255, 255, 0.1); overflow: hidden; transition: width 0.5s;}
+#header div.logo h1 {position: absolute; left: 0; top: 50%; transform: translate(0, -50%); width: 160px; height: 50px; border: 1px solid transparent; transition: all 0.5s; box-sizing: border-box;}
+#header div.logo h1 a {position: relative; display: block; height: 100%;}
+#header div.logo h1 a img {position: absolute; left: 0; top: 50%; transform: translate(0, -50%); max-height: 100%; transition: all 0.5s;}
+#header div.logo h1 a img + img {opacity: 0; transform: translate(0, -50%) scale(0.2);}
+#header div.logo h1 a span {position: absolute; left: 50px; bottom: 5px; font-size: 10px; font-weight: 300; color: #ffffff; overflow: hidden; white-space: nowrap; transition: all 0.5s;}
+#header div.logo a.toggle {position: absolute; right: 5px; top: 50%; transform: translate(0, -50%); width: 22px; height: 22px; color: rgba(255, 255, 255, 0.5); border-radius: 3px; transition: all 0.5s;}
+#header div.logo a.toggle:hover {color: rgba(255, 255, 255, 0.85); background-color: rgba(255, 255, 255, 0.1);}
+#header div.logo a.toggle i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+body.close #header div.logo {width: 100px;}
+body.close #header div.logo h1 {left: 10px; width: 50px; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.5)}
+body.close #header div.logo h1 a img:first-child {opacity: 0;}
+body.close #header div.logo h1 a img + img {opacity: 1; transform:translate(0, -50%) scale(1);}
+body.close #header div.logo h1 a span {width: 0px; left: 0px;}
+body.close #header div.logo a.toggle i {transform: translate(-50%, -50%) rotate(180deg);}
+
+#header div.user {position: absolute; left: 240px; top: 50%; transform: translate(0, -50%); color: #ffffff; transition: left 0.5s}
+#header div.user > a {position: relative; /*background-color: red;*/ display: block; overflow: hidden; padding-right: 50px;}
+#header div.user > a > span {float: left;}
+#header div.user span.photo {width: 34px; height: 34px; overflow: hidden; margin-right: 10px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 100px; background: url('../img/common/icon_face.png') center center no-repeat; background-size: cover; box-sizing: border-box;}
+#header div.user span.name {line-height: 34px; font-size: 12px;}
+#header div.user span.name em {font-size: 14px; margin-right: 5px;}
+#header div.user span.icon {position: absolute; right: 0; top: 50%; transform: translate(0, -50%); width: 22px; height: 22px; color: rgba(255, 255, 255, 0.5); border-radius: 3px; font-size: 14px;}
+#header div.user a:hover span.icon {background-color: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.85);}
+#header div.user span.icon i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: transform 0.5s;} 
+#header div.user.open span.icon i {transform: translate(-50%, -50%) rotate(180deg);}
+body.close #header div.user {left: 120px;}
+
+#header ul.link {position: absolute; right: 30px; top: 50%; transform: translate(0, -50%);}
+#header ul.link > li {float: left;}
+#header ul.link > li + li {margin-left: 8px;}
+#header ul.link > li > a {position: relative; display: block; width: 42px; height: 42px; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 4px; box-sizing: border-box; font-size: 18px; color: rgba(255, 255, 255, 0.8);}
+#header ul.link > li > a:hover {color: rgba(255, 255, 255, 1); border-color: rgba(255, 255, 255, 0.6); background-color: rgba(255, 255, 255, 0.1);}
+#header ul.link > li > a i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+
+#gnb {position: fixed; left: 0; top: 64px; width: 220px; height: calc(100% - 64px); background: #ffffff; box-sizing: border-box; overflow: auto; padding: 20px 15px 100px 15px; transition: left 0.5s; color: #8da0aa;}
+body.close #gnb {left: -220px;}
+#gnb h3 {font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 8px; /*background-color: red;*/}
+#gnb h3.on {color: rgba(107,29,253,1); font-weight: 700;}
+#gnb ul.nav > li + li {margin-top: 2px; /*background-color: yellow;*/}
+#gnb ul.nav + h3 {margin-top: 20px; /*background-color: green;*/}
+#gnb ul.nav > li > a {position: relative; display: block; line-height: 34px; border: 1px solid transparent; border-radius: 4px; padding-left: 32px; padding-right: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: all 0.3s;}
+#gnb ul.nav > li > a > i:first-child {position: absolute; left: 8px; top: 50%; transform: translate(0, -50%); color: rgba(107,29,253,1); opacity: 0.6;}
+#gnb ul.nav > li > a > i:last-child {position: absolute; right: 4px; top: 50%; transform: translate(0%, -50%); font-size: 12px;}
+#gnb ul.nav > li.on > a {color: rgba(107,29,253,1); border-color: #d1d9dd;}
+#gnb ul.nav > li.on > a > i:last-child {transform: translate(0, -50%) rotate(90deg); }
+#gnb ul.nav > li > a:hover {color: rgba(107,29,253,1); border-color: #d1d9dd; text-decoration: underline;}
+#gnb ul.nav > li > a:hover i:first-child {opacity: 0.8;}
+#gnb ul.nav > li > ul {height: 0; overflow: hidden; font-size: 12px; transition: height 0.3s;}
+#gnb ul.nav > li.on > ul {height: auto;}
+#gnb ul.nav > li > ul > li { border: 1px solid #f8f9fa;}
+#gnb ul.nav > li > ul > li + li {border-top: none;}
+#gnb ul.nav > li > ul > li:first-child {border-top-left-radius: 4px; border-top-right-radius: 4px; margin-top: 10px;}
+#gnb ul.nav > li > ul > li:last-child {border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; margin-bottom: 10px;}
+#gnb ul.nav > li:last-child > ul > li:last-child {margin-bottom: 0;}
+#gnb ul.nav > li > ul > li > a {position: relative; display: block; line-height: 30px; border: 1px solid transparent; padding-left: 28px; padding-right: 24px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: all 0.3s;}
+#gnb ul.nav > li > ul > li.on > a {color: rgba(107,29,253,1); border-color: #d1d9dd;}
+#gnb ul.nav > li > ul > li > a::before {content: ''; position: absolute; left: 10px; top: 50%; transform: translate(0, -50%); width: 8px; height: 8px; border-radius: 8px; background: #8da0aa; transition: all 0.3s;}
+#gnb ul.nav > li > ul > li.on > a::before {background-color: rgba(107,29,253,1);}
+#gnb ul.nav > li > ul > li > a:hover {color: rgba(107,29,253,1); border-color: #d1d9dd; text-decoration: underline; border-radius: 4px;}
+#gnb ul.nav > li > ul > li > a:hover::before {background-color: rgba(107,29,253,1);}
+
+body.sub #main {min-height: calc(100vh - 94px); box-sizing: border-box; padding: 20px 30px 100px 30px;}
+body.sub #main h2 {font-size: 30px; font-weight: 500; margin-bottom: 20px;}
+
+
+#footer {background-image: linear-gradient(90deg, rgba(107,29,253,1) 0%, rgba(252,69,186,1) 100%); text-align: center; font-size: 11px; line-height: 30px; color: #fff;}
+
+/* module */
+section.container {}
+section.container + section.container {margin-top: 20px;}
+section.container::after {content: ''; display: block; clear: both;}
+section.container > section.layout-box {float: left; border: 1px solid #d1d9dd; border-radius: 4px; box-sizing: border-box; min-height: 100px; padding: 15px 20px;}
+section.container > section.layout-box + section.layout-box {margin-left: 20px;}
+section.container.col-1 > section.layout-box {width: 100%;}
+section.container.col-2 > section.layout-box {width: calc(50% - 10px);}
+section.container h3 {font-size: 16px; font-weight: normal; margin-bottom: 10px;}
+
+/* 버튼 */
+div.button-box {text-align: right;}
+div.button-box::after {content: ''; display: block; clear: both;}
+div.button-box.left {text-align: left;}
+div.button-box.center {text-align: center;}
+div.button-box.right {text-align: right;}
+
+.btn {position: relative; display: inline-block; box-sizing: border-box; border-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.2); min-width: 120px; line-height: 28px; padding: 0 10px; font-family: inherit; font-size: 13px; appearance: none; -webkit-appearance: none; text-align: center; transition: all 0.5s; vertical-align: middle;/*overflow: hidden;*/}
+.btn:hover {border-color: rgba(0, 0, 0, 0.5);}
+.btn.left {float: left; margin-right: 3px;}
+.btn.round {border-radius: 100px;}
+.btn.square {border-radius: 0;}
+
+.btn.small {min-width: 80px; height: 24px; line-height: 22px; font-size: 11px;}
+.btn.medium {min-width: 120px; height: 30px; line-height: 28px; font-size: 13px;}
+.btn.large {min-width: 160px; height: 38px; line-height: 36px; font-size: 16px;}
+
+.btn.whtie {background-color: #ffffff; color: #000000}
+.btn.purple {background-color: #924DF3ED; color: #ffffff;}
+
+
+
+.btn.icon-left {padding-left: calc(2em + 10px);}
+.btn.icon-left i {position: absolute; left: 0; top: 0; height: 100%; background-color: red; /*background-color: rgba(255, 255, 255, 0.4);*/ width: 2em;}
+.btn.icon-left i::before {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.btn.icon-right {padding-right: calc(2em + 10px);}
+.btn.icon-right i {position: absolute; right: 0; top: 0; height: 100%; background-color: blue; width: 2em;}
+.btn.icon-right i::before {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+
+.btn.icon {min-width: 0; padding: 0; border-radius: 100px;}
+.btn.icon i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.btn.small.icon {width: 24px;}
+.btn.medium.icon {width: 30px;}
+.btn.large.icon {width: 38px;}
+
+
+/* form-box */
+table.form-box {width: 100%; border-top: 1px dashed #e0e0e0; font-size: 13px; table-layout: fixed;}
+table.form-box td {padding: 8px 12px; border-bottom: 1px dashed #e0e0e0; border-left: 1px dashed #e0e0e0;}
+table.form-box td:first-child {border-left: none;}
+table.form-box td.th {background-color: #f9f9f9; font-weight: 700; text-align: right; width: 150px; box-sizing: border-box;}
+table.form-box td.th label em {color: #eb6759; margin-right: 5px;}
+
+input.text,
+select,
+textarea {display: inline-block; border: 1px solid #e0e0e0; border-radius: 4px; height: 30px; box-sizing: border-box; padding: 0 10px; font-family: inherit; font-size: 13px; outline: none; background-color: #fff; appearance: none; vertical-align: middle; transition: all 0.3s;}
+select {background: url('../img/common/icon-select.png') right 5px center no-repeat; background-size: 10px auto; padding-right: 30px;}
+textarea {width: 100%; height: 100px;}
+input.text:focus,
+select:focus,
+textarea:focus {border-color: rgba(107,29,253,1); box-shadow: inset 0px 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgba(107,29,253,0.5);}
+::placeholder {color: rgba(107,29,253,0.5);}
+
+input[type="radio"],
+input[type="checkbox"] {margin: 0; vertical-align: middle; }
+
+input.text.full {width: 100%;}
+input.text.half {width: calc(50% - 10px);}
+input.text.short {width: 60px;}
+input.text.date {width: 80px;}
+input.text.count {width: 50px;}
+input.txt.money {width: 100px;}
+
+ul.input-list {overflow: hidden; line-height: 30px;}
+ul.input-list > li {float: left; margin-right: 30px;}
+ul.input-list > li > label {padding-left: 5px;}
+
+div.input-group {display: inline-block; vertical-align: middle; font-size: 13px;}
+div.input-group * {float: left; border-radius: 0;}
+div.input-group > .label {background-color: #f9f9f9; min-width: 30px; height: 30px; line-height: 28px; text-align: center; padding: 0 10px; border: 1px solid #e0e0e0; box-sizing: border-box; color: #777; position: relative;}
+div.input-group > a.label {background-color: rgba(107,29,253,0.5); color: #ffffff;}
+div.input-group > a.label i {color: #ffffff; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+div.input-group > span i {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #999999;}
+div.input-group > :first-child {border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
+div.input-group > :last-child {border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
+
+ul.attach-file-list {font-size: 12px; color: #777777;}
+ul.attach-file-list + * {margin-top: 10px;}
+ul.attach-file-list > li {position: relative; height: 30px; border: 1px solid #e0e0e0; box-sizing: border-box; line-height: 28px; border-radius: 4px; overflow: hidden;}
+ul.attach-file-list > li + li {margin-top: 5px;}
+ul.attach-file-list > li > a {display: block;}
+ul.attach-file-list > li .icon {position: absolute; left: 10px; top: 50%; transform: translate(0, -50%);}
+ul.attach-file-list > li i.icon {color: #ffcc00;} 
+ul.attach-file-list > li .name {background-color: yellow; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: calc(100% - 200px); padding-left: 36px;}
+ul.attach-file-list > li .size {background-color: #00bca4; position: absolute; right: 10px; top: 50%; transform: translate(0, -50%); color: #ffffff; line-height: 20px; padding: 0 8px; border-radius: 4px; font-size: 11px;}
+
+
+/* mouse-scroll */
+.custom-scroll {overflow: auto; scrollbar-width: thin; scrollbar-color: #e0e0e0; -ms-overflow-style: none;}  /* firefox, IE 고려 */
+.custom-scroll::-webkit-scrollbar {width: 6px;}
+.custom-scroll::-webkit-scrollbar-thumb {background-color: transparent; border-radius: 10px;}
+.custom-scroll:hover::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.2);}
+.custom-scroll::-webkit-scrollbar-track {background-color: transparent;}
+
+
+/* main page */
+body.main #main {position: relative; width: 100vw; height: 100vh; /*background-color: red;*/ overflow: hidden;}
+body.main #main ::placeholder {font-weight: 800;}
+body.main #main > div.login-wrap {position: relative; width: 550px; height: 360px; border: 1px solid #d1d9dd; box-shadow: 0px 0px 10px 0 rgb(0 0 0 / 20%); border-radius: 4px; margin: 300px auto 0 auto;}
+body.main #main > div.login-wrap > div.panel {width: 90%; position: absolute; left: 50%; top: 50px; transform: translate(-50%, 0); /*background-color: aqua;*/ }
+body.main #main > div.login-wrap > div.panel input {width: 100%; height: 60px; padding-left: 40px; box-sizing: border-box; margin: 0 auto; outline: none; border: 1px solid #e0e0e0; appearance: none; vertical-align: middle; font-size: 20px; color: #888; font-weight: 300;}
+body.main #main > div.login-wrap > div.panel > div#id-line > input {border-top-left-radius: 10px; border-top-right-radius: 10px; }
+body.main #main > div.login-wrap > div.panel > div#id-line > span.icon-id {position: absolute; left: 10px; top: 25%; transform: translate(0, -50%); width: 20px; height: 20px; background: url(../img/common/m_sp_01_login_2d02c3e8.png) no-repeat; background-size: 229px 196px; background-position: -206px -141px;}
+body.main #main > div.login-wrap > div.panel > div#pw-line > input {border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;}
+body.main #main > div.login-wrap > div.panel > div#pw-line > span.icon-id {position: absolute; left: 10px; top: 75%; transform: translate(0, -50%); width: 20px; height: 20px; background: url(../img/common/m_sp_01_login_2d02c3e8.png) no-repeat; background-size: 229px 196px; background-position: -206px -97px;}
+body.main #main > div.login-wrap > div.login-keep-wrap {position: absolute; left: 60px; bottom: 150px; font-size: 17px; color: #888; }
+body.main #main > div.login-wrap > div.login-keep-wrap::before {position: absolute; left: -30px; top: 50%; transform: translate(0, -50%);  content: ''; background: url('../img/common/m_sp_01_login_2d02c3e8.png') no-repeat; background-size: 229px 196px; background-position: -155px -139px; width: 23px; height: 23px; z-index: 10;}
+body.main #main > div.login-wrap > div.login-keep-wrap::after {display: none; background-color: rgba(107,29,253,0.9); position: absolute; left: -30px; top: 50%; transform: translate(0, -50%);  content: ''; width: 23px; height: 23px; border-radius: 50%;}
+body.main #main > div.login-wrap > div.login-keep-wrap.on::after {display: inline-block;}
+body.main #main > div.login-wrap > div.ip-check {position: absolute; right: 100px; bottom: 150px; font-size: 17px; color: #888;}
+body.main #main > div.login-wrap > div.ip-check > a.ip-check-btn {position: absolute; right: -50px; top: 50%; transform: translate(0, -50%);  display: inline-block; width: 40px; height: 20px; border-radius: 10px; background-color: #888;}
+body.main #main > div.login-wrap > div.ip-check.on > a.ip-check-btn {background-color: rgba(107,29,253,1);}
+body.main #main > div.login-wrap > div.ip-check > a.ip-check-btn::before {position: absolute; left: 2px; top: 50%; transform: translate(0, -50%);  content: ''; width: 18px; height: 18px; border-radius: 50%; background-color: #fff; transition: left 0.3s;}
+body.main #main > div.login-wrap > div.ip-check.on > a.ip-check-btn::before {left: 20px; } 
+body.main #main > div.login-wrap > div.btn-login-wrap {background-color: rgba(107,29,253,1); position: absolute; left: 50%; bottom: 40px; transform: translate(-50%, 0); width: 90%; height: 60px; box-sizing: border-box; }
+body.main #main > div.login-wrap > div.btn-login-wrap > a {display: block; color: #fff; text-align: center; line-height: 60px; font-size: 25px; font-weight: 600;}
+
+body.main #main > div.login-wrap > div.find-service {position: absolute; left: 50%; transform: translate(-50%, 0); bottom: -100px; width: 250px; height: 20px;}
+body.main #main > div.login-wrap > div.find-service > ul {width: 100%; height: 100%;}
+body.main #main > div.login-wrap > div.find-service > ul > li {position: relative; float: left; color: #888;}
+body.main #main > div.login-wrap > div.find-service > ul > li + li {margin-left: 10px;}
+body.main #main > div.login-wrap > div.find-service > ul > li + li::before {display: inline-block; margin-right: 10px; content: '|'; color: #999999 }
+body.main #main > div.description {position: absolute; left: 50%; top: 250px; transform: translate(-50%, 0);}
+
+
