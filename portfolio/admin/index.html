@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1200" />
+    <meta name="author" content="Min Young Jun Inc." />
+    <meta name="apple-mobile-web-app-title" content="민영준 관리시스템" />
+    <base href="./" />
+    <title>민영준 관리 시스템</title>
+    <meta name="description" content="민영준 관리시스템" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+  
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/common.js"></script>
+  </head>
+<body class="main">
+    <main id="main">
+      <div class="login-wrap">
+        <div class="panel">
+          <div class="input_row" id="id-line">
+            <input type="text full" placeholder="아이디" />
+            <span class="icon-id"><span class="ir-hidden">아이디 아이콘</span></span>
+          </div>
+          <div class="input_row" id="pw-line">
+            <input type="text full" placeholder="비밀번호" />
+            <span class="icon-id"><span class="ir-hidden">비밀번호 아이콘</span></span>
+          </div>
+        </div>
+        <div class="login-keep-wrap">
+          <a href="#" class="keep-check">로그인상태유지</a>
+        </div>
+        <div class="ip-check">
+          <a href="#">ip보안</a>
+          <a href="#" class="ip-check-btn"><span class="ir-hidden">버튼</span></a>
+        </div>
+        <div class="btn-login-wrap">
+          <a href="./page/overview/dashboard.html">로그인</a>
+        </div>
+        <div class="find-service">
+          <ul>
+            <li><a href="#">비밀번호찾기</a></li>
+            <li><a href="#">아이디찾기</a></li>
+            <li><a href="#">회원가입</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="description">
+        <p>로그인 버튼을 눌러주세요</p>
+      </div>
+    </main>
+
+
+<script>
+'use strict'
+var loginKeppWrap = document.querySelector('.login-keep-wrap');
+var ipCheck = document.querySelector('.ip-check');
+
+loginKeppWrap.addEventListener('click', function() {
+  loginKeppWrap.classList.toggle('on')
+});
+
+ipCheck.addEventListener('click', function() {
+  ipCheck.classList.toggle('on');
+});
+
+</script>
+</body>
+</html>
