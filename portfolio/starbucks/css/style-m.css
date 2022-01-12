@@ -1,0 +1,792 @@
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, button {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+img {vertical-align: middle; max-width: 100%;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i[class^="fa"] {position: relative; display: inline-block; vertical-align: middle; overflow: hidden;}
+i[class^="fa"] span {position: absolute; left: -9999px;}
+.ir-hidden {position: absolute; left: -9999px;}
+.pc {display: none !important;}
+br.only-pc {content: '';}
+br.only-pc::after {content: '\00a0';}
+br.under-650 {display: none;}
+br.under-650::after {content: '\00a0';}
+ul.under-650, 
+img.under-650 {display: none;}
+
+body {font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif; font-size: 14px; color: #000000; letter-spacing: -0.03em; background-color: #ffffff;}
+#wrapper {min-width: 350px; max-width: 850px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -100px; width: 100%; line-height: 30px; background-color: #585757; color: #ffffff; text-align: center; z-index: 10001;}
+#skip-nav:focus {top: 0;}
+
+
+#main,
+#footer {left: 0;}
+
+#main.move,
+#footer.move {position: relative; left: -350px; transition: left 0.5s;}
+
+/* header */
+#header {background-color: #f6f5ef; position: fixed; width: 100%; height: 70px; z-index: 10000;}
+#header .wrapper {width: 100; height: 100%;}
+#header h2 {width: 45px; height: 45px; position: absolute; left: 10px; top: 50%; transform: translate(0, -50%);}
+#header h2 > a {display: block; width: 100%; height: 100%;}
+#header h2 > a > img {display: block; width: 100%; height: 100%;}
+#header ul.btn-menu {position: absolute; right: 10px; top: 50%; transform: translate(0, -50%); height: 32px;}
+#header ul.btn-menu > li {float: left;}
+#header ul.btn-menu > li + li {margin-left: 25px;}
+#header ul.btn-menu > li > a {display: block; width: 100%; height: 100%;}
+#header ul.btn-menu > li:first-child > a > img {width: 25px; height: 30px;}
+#header ul.btn-menu > li:nth-child(2) > a > img {width: 24px; height: 32px;}
+#header ul.btn-menu > li:last-child > a > img {width: 28px; height: 26px;}
+#header div.mask {display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: black; opacity: 0.3;}
+#header.show div.mask {display: block;}
+ 
+
+
+#header div.gnb-box {position: relative; right: -100%; width: 100vw; height: 100vh;}
+#header.show div.gnb-box {display: block; right: 0; transition: right 0.5s;}
+div.gnb-box > a.btn-close {position: absolute; left: 100px; top: 30px; width: 30px; height: 30px; transition: transform 1s;}
+div.gnb-box > a.btn-close:hover {transform: rotate(180deg);}
+
+
+#gnb {position: absolute; right: 0px; top: 0; width: 350px; height: 100vh; font-size: 18px; box-sizing: border-box;
+background-color: #111; overflow: scroll; }
+
+#gnb > div.gnb-search {position: relative; background-color:  #2d2926; width: 350px; height: 100px;}
+#gnb > div.gnb-search > input {box-sizing: border-box; width: 150px; height: 50px; position: absolute; left: 35px; top: 50%; transform: translate(0%, -50%); border-radius: 5px;}
+#gnb > div.gnb-search > div.search-btn {display: inline-block; box-sizing: border-box; width: 100px; height: 50px; background-color: #666; position: absolute; right: 35px; top: 50%; transform: translate(0%, -50%); border-radius: 5px;}
+#gnb > div.gnb-search > div.search-btn > a {display: block; text-align: center; line-height: 50px; font-size: 18px; color: #ffffff; }
+#gnb > div.gnb-search > div.search-btn > a:hover {text-decoration-line: underline;}
+#gnb > ul > li {width: 350px;}
+#gnb > ul > li:first-child {background-color: #2d2926;}
+#gnb > ul > li:first-child > ul {background-color: #111;}
+#gnb > ul > li:nth-child(2) {display: block;}
+/* #gnb > ul > li + li { display: none;} */
+#gnb > ul > li > a {position: relative; display: block; color: #fff; box-sizing: border-box; line-height: 74px; padding-left: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+#gnb > ul > li > a:hover {text-decoration-line: underline;}
+#gnb > ul > li + li > a {background-color: #111;}
+#gnb > ul > li > a > img {position: absolute; right: 60px; top: 50%; transform: translate(0, -50%);}
+#gnb > ul > li > ul {height: 0px; overflow: hidden; transition: height 0.5s;}
+#gnb > ul > li > ul > li {position: relative; color: #fff; }
+#gnb > ul > li > ul > li > a {position: relative; display: block; box-sizing: border-box; line-height: 74px; padding-left: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+#gnb > ul > li > ul > li > a:hover {text-decoration-line: underline;}
+#gnb > ul > li > ul > li > a > img {position: absolute; right: 40px; top: 50%; transform: translate(0, -50%);}
+#gnb > ul > li > ul > li > ul {height: 0px; overflow: hidden; transition: height 0.5s;}
+#gnb > ul > li > ul > li > ul > li > a {display: block;  line-height: 50px; box-sizing: border-box; background-color: #222222; color: #999; padding-left: 60px;}
+#gnb > ul > li > ul > li > ul > li > a:hover {text-decoration-line: underline;}
+
+#main-visual {background-color: #D1131D; margin-top: 70px; width: 100vw; height: 550px; } 
+#main-visual > div.badge {display: inline-block; position: fixed; right: 0%; top: 150px; z-index: 9999;}
+#main-visual > div.container {position: relative; /*background-color: blue;*/ width: 100%; height: 100%; margin: 0 auto;}
+#main-visual > div.container > div.main-visual-slogan {display: inline-block; width: 160px; height: 95px; margin-top: 50px; margin-left: 20px;}
+#main-visual > div.container > span.btn-slogan {position: absolute; left: 50px; top: 130px; width: 100px; height: 30px; border: 1px solid #fff; border-radius: 4px;}
+#main-visual > div.container > span.btn-slogan > a {display: inline-block; color: #fff; font-size: 15px; 
+width: 100%; line-height: 30px; text-align: center; }
+#main-visual > div.container > span.btn-slogan > a:hover {background-color: rgba(255, 255, 255, 0.5); text-decoration-line: underline;}
+#main-visual > div.container > ul {width: 100%; height: 400px;}
+#main-visual > div.container > ul > li {position: absolute; opacity: 0;}
+#main-visual > div.container > ul > li > img.mobile {display: none;}
+#main-visual > div.container > ul > li:first-child {width: 290px; height: 260px; left: 10px; bottom: 60px; animation: show-up 1s ease-in 0.6s 1 normal forwards; transition: all 1s;}
+#main-visual > div.container > ul > li:first-child > img {width: 100%; height: 100%;}
+#main-visual > div.container > ul > li:first-child::before { display: block; content: ''; background: url('../img/2021_chiristmas2_bg_left.png') no-repeat center;
+position: absolute; left: 20%; top: 30%; width: 47px; height: 69px;}
+#main-visual > div.container > ul > li:nth-child(2) {width: 215px; height: 350px; left: 280px; bottom: 50px; animation: show-up 1s ease-in 1.2s 1 normal forwards; transition: all 1s;}
+#main-visual > div.container > ul > li:nth-child(2) > img {width: 100%; height: 100%;}
+#main-visual > div.container > ul > li:last-child {width: 320px; height: 360px; right: 60px; bottom: 100px; animation: show-up 1s ease-in 1.5s 1 normal forwards; transition: all 1s;}
+#main-visual > div.container > ul > li:last-child > img {width: 100%; height: 100%;}
+#main-visual > div.container > ul > li:last-child::after {display: block; content: ''; background: url('../img/2021_chiristmas2_bg_right.png') no-repeat center;
+position: absolute; left: 65%; top: 25%; width: 29px; height: 31px;}
+
+@keyframes show-up {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+section.notice {position: relative; width: 100vw; height: 60px;}
+section.notice::before {content: ''; width: 50%; height: 100%;  background-color: #111;
+position: absolute; left: 0; top: 0;}
+section.notice::after {content: ''; width: 50%; height: 100%;  background-color: #f6f5ef;
+position: absolute; right: 0; top: 0;}
+section.notice > div.container {position: relative;  max-width: 1100px; height: 100%; margin: 0 auto;}
+section.notice > div.container > div.left-notice {position: absolute; left: 0; top: 0; width: 550px; height: 100%;}
+section.notice > div.container > div.left-notice > h3 {margin-left: 20px; line-height: 60px;}
+section.notice > div.container > div.left-notice > span.btn {position: absolute; right: 30%; top: 50%; transform: translate(0%, -50%); width: 35px; height: 35px; color: #c19d55;}
+section.notice > div.container > div.left-notice > div.box {position: absolute; left: 100px; top: 0; width: 450px; height: 100%; overflow: hidden;}
+section.notice > div.container > div.left-notice > div.box > ul.slide {position: absolute; left: 0; top: 50%; transform: translate(0, -50%); width: 100%; height: 100%;}
+section.notice > div.container > div.left-notice > div.box > ul.slide > li {position: absolute; left: 0; top: 0; width: 30%; line-height: 60px;
+display: none;}
+section.notice > div.container > div.left-notice > div.box > ul.slide > li > a {display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color: #fff}
+
+
+section.notice > div.container > div.right-promotion {position: absolute; /*right: -10%;*/ right: 0%; top: 0; /*background-color: red;*/ 
+width: 550px; height: 100%; z-index: 10;}
+section.notice > div.container > div.right-promotion > h3 {line-height: 60px; margin-left: 150px;}
+section.notice > div.container > div.right-promotion > span.btn {position: absolute; right: 10%; top: 50%; transform: translate(0, -50%); cursor: pointer; width: 35px; height: 35px;}
+section.notice > div.container > div.right-promotion > span.btn > img {display: none;}
+section.notice > div.container > div.right-promotion > span.btn > img:first-child {display: block;}
+section.notice > div.container > div.right-promotion > span.btn.change > img:first-child {display: none;}
+section.notice > div.container > div.right-promotion > span.btn.change > img:last-child {display: block;}
+  
+
+section.banner-slide {position: relative; background-color: #f6f5ef; width: 100vw; /*height: 0;*/ height: 450px; transition: height 0.5s; overflow: hidden;}
+section.banner-slide.change {height: 0px;}
+section.banner-slide > div.box {position: relative; max-width: 500px; height: 350px; margin: 10px auto 0 auto;}
+section.banner-slide > div.box > ul.slide {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+section.banner-slide > div.box > ul.slide > li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0.4;}
+section.banner-slide > div.box > ul.slide > li > img {width: 100%; height: 100%;}
+section.banner-slide > div.box > ul.slide > li > a {position: absolute; left: 50%; bottom: -10px; transform: translate(-50%, 0);
+border: 2px solid #222222; padding: 10px 25px; font-size: 14px; transition: all 0.3s;}
+section.banner-slide > div.box > ul.slide > li:nth-child(2) > a {bottom: 0px;}
+section.banner-slide > div.box > ul.slide > li > a:hover {background-color: #000000; color: #ffffff; font-weight: 900; text-decoration-line: underline;}
+section.banner-slide > ul.indicator {position: absolute; left: 50%; bottom: 10px; transform: translate(-50%, 0); width: 100;}
+section.banner-slide > ul.indicator > li {display: inline-block;}
+section.banner-slide > ul.indicator > li > a {display: block; text-indent: -9999px; width: 13px; height: 12px; background: url('../img/banner-slide_indicator.png') no-repeat center;}
+section.banner-slide > ul.indicator > li.on > a {background: url('../img/banner-slide_indicator_click.png') no-repeat center;}
+section.banner-slide > p.control > a.prev,
+section.banner-slide > p.control > a.next {position: absolute; bottom: 50px;  width: 50px; height: 50px; border-radius: 25px; border-radius: 100%; border: 1px solid #222222; transition: all 0.5s;}
+section.banner-slide > p.control > a.prev {left: 50px; z-index: 5;}
+section.banner-slide > p.control > a.next {right: 50px;}
+section.banner-slide > p.control > a.prev > img,
+section.banner-slide > p.control > a.next > img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+section.banner-slide > p.control > a.prev:hover,
+section.banner-slide > p.control > a.next:hover {background: #fff;}
+section.banner-slide > p.control > a.play {position: absolute; left: 45%; bottom: 14px;}
+section.banner-slide > p.control > a.play > img {display: none;}
+section.banner-slide > p.control > a.play > img:first-child {display: block;}
+section.banner-slide > p.control > a.play.on > img:first-child {display: none;}
+section.banner-slide > p.control > a.play.on > img:last-child {display: block;}
+
+section.reward {width: 100vw; height: 500px;}
+section.reward > div.container {background: #1E3932; position: relative; width: 100%; height: 100%; margin: 0 auto; z-index: 10;}
+section.reward > div.container > div.logo {position: absolute; left: 20px; top: 40%; transform: translate(0 , -50%); width: 220px; height: 180px;}
+section.reward > div.container > div.info-box {position: absolute; left: 260px; top: 50%; transform: translate(0%, -50%); color: #fff; width: 460px; height: 430px; }
+section.reward > div.container > div.info-box strong {font-weight: 900;}
+section.reward > div.container > div.info-box > div.top-info {position: relative; width: 100%; height: 180px;}
+section.reward > div.container > div.info-box > div.top-info > h2 {font-size: 26px; font-weight: 500; margin-bottom: 12px;}
+section.reward > div.container > div.info-box > div.top-info > p,
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn {font-size: 17px;}
+section.reward > div.container > div.info-box > div.top-info > p {line-height: 20px;}
+section.reward > div.container > div.info-box > div.top-info::after {position: absolute; left: 0; bottom: -50px; content:''; width: 100%; height: 2px; background: rgba(255, 255, 255, 0.4);}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn {position: absolute; left: 0px; bottom: -25px;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a {display: inline-block;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:hover {text-decoration-line: underline;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:first-child {background-color: #00704A; box-sizing: border-box; width: 90px; line-height: 38px; text-align: center; border-radius: 4px; margin-right: 10px;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:last-child {box-sizing: border-box; width: 80px; line-height: 34px; text-align: center; border: 2px solid #fff; border-radius: 4px;}
+section.reward > div.container > div.info-box > div.bottom-info {margin-top: 60px; font-size: 14px;}
+section.reward > div.container > div.info-box > div.bottom-info > p {line-height: 20px;}
+section.reward > div.container > div.info-box > div.bottom-info > p > strong {font-size: 16px;}
+section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn {position: absolute; left: 0px; bottom: 50px; width: 180px; line-height: 34px; border: 2px solid #fff; border-radius: 4px; text-align: center;}
+section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn > a:hover {text-decoration-line: underline;}
+
+section.blend {background: #ffa59c url('../img/blend_bg.jpg') center center no-repeat; background-size: 100% 100%; width: 100vw; height: 400px;}
+section.blend > div.container {position: relative; width: 100%; height: 100%;}
+section.blend > div.container img.mobile {display: none;}
+section.blend > div.container > div.img-box {/*background-color: blue;*/ width: 330px; height: 290px; position: absolute; /*left: 100px;*/ opacity: 0; left: -80%; top: 50%; transform: translate(0, -50%); transition: all  2s;}
+section.blend.move > div.container > div.img-box {left: 70px; opacity: 1;}
+section.blend > div.container > div.txt-box {/*background-color: lime;*/ width: 220px; height: 165px; position: absolute; /*right: 200px;*/opacity: 0; right: -80%; top: 50%; transform: translate(0, -50%); transition: all 2s;}
+section.blend.move > div.container > div.txt-box {right: 200px; opacity: 1;}
+
+section.blend > div.container > div.txt-box > div.blend-btn {margin-top: 30px; font-size: 15px; box-sizing: border-box; width: 120px; height: 35px; }
+section.blend > div.container > div.txt-box > div.blend-btn > a {display: block; line-height: 35px; /*background-color: yellow;*/ text-align: center; border: 1px solid #000000; border-radius: 5px; transition: all 0.5s;}
+section.blend > div.container > div.txt-box > div.blend-btn > a:hover {text-decoration-line: underline; background-color: #000000; color: #fff}
+
+section.reserve {position: relative; /*background-color: #094a3d;*/ height: 357px; background: url('../img/reserve_christmas.jpg') center center no-repeat; background-size: cover;}
+section.reserve > div.container {position: relative; width: 100%; /*background-color: blue;*/}
+section.reserve > div.container > div.reserve-title {position: relative; z-index: 5; margin-left: 40px;  line-height: 400px;}
+section.reserve > div.container > div.reserve-btn {position: absolute; left: 40%; top: 65%;  z-index: 5;  font-size: 15px; box-sizing: border-box; width: 120px; height: 35px; }
+section.reserve > div.container > div.reserve-btn > a {display: block; line-height: 35px; text-align: center; border: 1px solid #d5a012; border-radius: 5px; color: #d5a012; transition: all 0.5s;}
+section.reserve > div.container > div.reserve-btn > a:hover {text-decoration-line: underline; border: 1px solid transparent;  border-radius: 5px; background-color: #d5a012; color: #fff}
+
+section.favorite {width: 100vw; height:1030px;}
+section.favorite > div.container {position: relative; width: 100%; height: 100%; background: url('../img/m_fav_bg.jpg') center center no-repeat; background-size: cover; background-attachment: fixed;}
+section.favorite > div.container > h2 {background: url('../img/m_fav_prod_txt_01.png') center center no-repeat; background-size: cover; position: absolute; opacity: 0; left: 50%; top: 150px;   transform: translate(-50%, 0);  width: 350px; height: 72px; transition: all 2s;}
+section.favorite.move > div.container > h2 {top: 600px; opacity: 1;}
+section.favorite > div.container > div.txt-box {background: url('../img/m_fav_prod_txt_02.png') center center no-repeat; background-size: cover; position: absolute; opacity: 0; left: 50%; top: 1000px; transform: translate(-50%, 0);  width: 440px; height: 129px;  transition: all 2s; transition-delay: 0.3s;}
+section.favorite.move > div.container > div.txt-box {top: 700px; opacity: 1;}
+section.favorite > div.container > div.favorite-image {background: url('../img/2021_christmas2_fav.png') center center no-repeat; background-size: cover; position: absolute; left: 50%; top: 100px; transform: translate(-50%, 0); width: 610px; height: 410px; transition: all 2s;}
+section.favorite > div.container > div.favorite-btn {/*background-color: blue;*/ position: absolute; left: 50%; bottom: 100px; transform: translate(-50%, 0); font-size: 15px; box-sizing: border-box; width: 120px; height: 35px; opacity: 0; transition: opacity 2.5s;}
+section.favorite > div.container > div.favorite-btn > a {display: block; /*background-color: yellow;*/ line-height: 35px; text-align: center; border: 1px solid #fff; border-radius: 5px; color: #fff; transition: all 0.5s;}
+section.favorite > div.container > div.favorite-btn > a:hover {border: 1px solid transparent; background-color: #fff; color: #000; text-decoration-line: underline;}
+section.favorite.move > div.container > div.favorite-btn {opacity: 1;}
+
+section.magazine {position: relative; width: 100vw; height: 1220px; z-index: 5;}
+section.magazine > div.container {position: relative; width: 100%; height: 100%;}
+section.magazine > div.container > div.bg {width: 100%; height: 100%; background: url('../img/reserve_magazine_m.jpg') center center no-repeat; background-size: 100% 100%;}
+section.magazine > div.container > div.btn {position: absolute; left: 50%; bottom: 50px;  font-size: 15px; transform: translate(-50%, 0); box-sizing: border-box; width: 120px; height: 35px;}
+section.magazine > div.container > div.btn > a {display: block;  line-height: 35px; text-align: center; border: 2px solid #000000; border-radius: 5px; transition: all 0.5s;}
+section.magazine > div.container > div.btn > a:hover {border: 2px solid transparent; background-color: #000000; color: #fff; text-decoration-line: underline;}
+
+section.store {background: url('../img/store_bg.jpg') center center no-repeat; background-size: cover; width: 100vw; height: 750px; overflow: hidden;}
+section.store > div.container {position: relative; width: 100%; height: 100%; margin: 0 auto; /*background-color: blue;*/}
+section.store > div.container > h2 {background: url('../img/m_store_h2.png') center center no-repeat; background-size: 100% auto; position: absolute; /*right: 100px;*/ left: 50%; transform: translate(-50%, 0); top: 100px; width: 380px; height: 96px; opacity: 0; transition: all 2s;}
+section.store > div.container > div.visual-01 {background: url('../img/store_img01.png') center center no-repeat; background-size: 100% auto; position: absolute; left: 410px; top: 130px; width: 200px; height: 199px; z-index: 5; opacity: 0; transition: opacity 2s;}
+section.store > div.container > div.visual-02 {background: url('../img/store_img02.png') center center no-repeat; background-size: 100% auto; position: absolute; left: 170px; top: 0; width: 300px; height: 255px; opacity: 0; transition: opacity 2s;}
+section.store > div.container > div.visual-03 {background: url('../img/store_img03.png') center center no-repeat; background-size: contain; position: absolute; left: 130px; top: 250px; width: 280px; height: 115px;}
+section.store > div.container > div.visual-04 {background: url('../img/store_img04.png') center center no-repeat; background-size: 100% auto; position: absolute; right: 50px; bottom: 0px; width: 170px; height: 75px;}
+section.store > div.container > div.txt {background: url('../img/m_store_txt.png') center center no-repeat; background-size: 100% auto; position: absolute; /*right: 117px;*/left: 50%; transform: translate(-50%, 0);  bottom: 0px; width: 440px; height: 104px; opacity: 0; transition: all 2s; transition-delay: 0.3s;}
+section.store > div.container > div.btn {font-size: 15px; box-sizing: border-box; width: 120px; height: 35px; position: absolute; left: 50%; bottom: 50px; transform: translate(-50%, 0); transition: all 2s; opacity: 0; transition-delay: 0.5s;}
+section.store > div.container > div.btn > a {display: block; line-height: 35px; text-align: center; border: 2px solid #000; border-radius: 5px; transition: all 0.5s;}
+section.store > div.container > div.btn > a:hover {border: 1px solid transparent; background-color: #000; color: #fff; text-decoration-line: underline;}
+section.store.move > div.container > h2,
+section.store.move > div.container > div.txt,
+section.store.move > div.container > div.btn {opacity: 1;}
+section.store.move > div.container > h2 {top: 400px;}
+section.store.move > div.container > div.visual-01,
+section.store.move > div.container > div.visual-02 {opacity: 1;}
+section.store.move > div.container > div.txt {bottom: 120px;}
+section.store.move > div.container > div.btn {right: 340px;}
+
+/* sub coffee page */
+body.coffee #main {}
+body.coffee div.content {width: calc(100vw - 50px); margin: 70px auto 0 auto; /*background-color: red;*/}
+div.sub-title {width: 100%; height: 95px; /*background-color: blue;*/}
+div.sub-title > div.container {position: relative; max-width: 1100px; height: 100%; margin: 0 auto; }
+div.sub-title > div.container > h2 {padding-top: 30px; /*background-color: orchid;*/}
+div.sub-title > div.container > ul {position: absolute; right: 0px; bottom: 10px;}
+div.sub-title > div.container > ul > li {position: relative; float: left; font-size: 12px;}
+div.sub-title > div.container > ul > li + li {margin-left: 15px;}
+div.sub-title > div.container > ul > li + li::before {background: url('../img/coffee/icon_arrow.png'); content: ''; position: absolute; left: -10px; top: 50%; transform: translate(0, -50%); width: 6px; height: 11px;}
+
+div.product-type-box {/*background-color: palegreen;*/ }
+div.product-type-box > div.container {position: relative; max-width: calc(1100px) ; margin: 0 auto; height: calc(210px - 2px) ; border: 1px solid #d9d9d9; border-radius: 4px; padding: 30px 30px 0 30px; box-sizing: border-box; box-shadow: 0px 0px 3px rgba(0 0 0 / 70%);}
+div.product-type-box.on > div.container {height: 70px; background: red;}
+div.product-type-box > div.container::before {position: absolute; left: 50%; top: 75px; transform: translate(-50%, 0); content: ''; width: calc(100% - 60px); height: 1px; background-color: #d9d9d9;}
+div.product-type-box.on > div.container::before {display: none;}
+div.product-type-box > div.container > a.btn {position: absolute; right: 30px; top: 20px;}
+div.product-type-box.on > div.container > ul.type-list {visibility: hidden;}
+div.product-type-box > div.container > ul.type-list {margin-top: 50px; height: 35px; width: 90%; margin: 50px auto 0 auto;}
+div.product-type-box > div.container > ul.type-list > li {float: left; width: 160px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+div.product-type-box > div.container > ul.type-list > li + li {margin-left: 15px;}
+div.product-type-box > div.container > ul.type-list > li > a {display: block; height: 100%; line-height: 35px;border-radius: 4px; text-align: center; color: #222222; font-size: 14px; background-color: #f4f4f1;}
+div.product-type-box > div.container > ul.type-list > li > a:hover {text-decoration: underline;}
+div.product-type-box > div.container > ul.type-list > li.on > a {color: #fff; background-color: #006633;}
+div.product-type-box.on > div.container > ul.flavor-list {visibility: hidden;}
+div.product-type-box > div.container > ul.flavor-list {/*background-color: purple;*/ margin-top: 10px; height: 38px; font-size: 12px; color: #666666; width: 90%; margin: 10px auto 0 auto;}
+div.product-type-box > div.container > ul.flavor-list > li {float: left; width: 17%;}
+div.product-type-box > div.container > ul.flavor-list > li + li {margin-left: 10px;}
+div.product-type-box > div.container > ul.flavor-list > li:nth-child(6) {margin-left: 0;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox {background: url('../img/coffee/ck_icon.jpg') 0 0 no-repeat; background-position: 5px 1px; vertical-align: middle;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox.checked {background: url('../img/coffee/ck_icon_on.jpg') 0 0 no-repeat; background-position: 5px 1px;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox > label,
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox > input {vertical-align: top;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox > input {opacity: 0;}
+
+div.detail-type { height: 80px;}
+div.detail-type > div.container {position: relative; max-width: 1100px; height: 100%; margin: 0 auto;}
+div.detail-type > div.container > div.box-inner {position: absolute; right: 0; bottom: 0; width: 243px; height: 40px; border: 1px solid #d9d9d9; border-radius: 4px; box-sizing: border-box;}
+div.detail-type > div.container > div.box-inner > div.box {width: 100%; height: 100%; border-radius: 4px; border: 1px solid transparent; }
+div.detail-type > div.container > div.box-inner > div.box > a {display: block; font-size: 14px; font-weight: 700; color:#444; line-height: 40px; padding-left: 5px; }
+div.detail-type > div.container > div.box-inner > div.box > a::after {content: ''; position: absolute; right: 5px; top: 50%; transform: translate(0, -50%); background: url('../img/coffee/sbox_arrow_down.png') no-repeat; width: 12px; height: 7px;}
+div.detail-type > div.container > div.box-inner ul.detail-list {display: none; position: absolute; left: -1px; bottom: -79px; width: 100%; background-color: #fff;}
+div.detail-type > div.container > div.box-inner ul.detail-list.show {display: block;}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li {width: calc(100% ); height: calc(40px - 2px); border: 1px solid #d9d9d9;}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li + li {border-top: none}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li > div.checkbox {background: url('../img/coffee/ck_icon.jpg') 0 0 no-repeat; background-position: 5px 13px;}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li > div.checked {background: url('../img/coffee/ck_icon_on.jpg') 0 0 no-repeat; background-position: 5px 13px;}
+div.detail-type > div.container > div.box-inner > ul.detail-list input {opacity: 0;}
+div.detail-type > div.container > div.box-inner > ul.detail-list label {margin-left: 5px; line-height: 38px; font-size: 14px; font-weight: 700; color:#444;}
+
+div.product-list-box {margin-top: 50px; padding-bottom: 100px;}
+div.product-list-box > div.container { max-width: 1100px; margin: 0 auto; /*background-color: #006633;*/}
+div.product-list-box > div.container > ul.product-list {display: none; width: 100%; /*background-color: orange;*/}
+div.product-list-box > div.container > ul.product-list.on {display: block;}
+div.product-list-box > div.container > ul.product-list > li {display: none;}
+div.product-list-box > div.container > ul.product-list.on > li.on {display: block;}
+div.product-list-box > div.container > ul.product-list > li + li {margin-top: 50px;}
+div.product-list-box > div.container > ul.product-list > li > div.product-name {width: 100%; height: 60px; font-size: 18px; color: #222222; font-weight: 800; box-sizing: border-box; background-color: #f4f4f2;}
+div.product-list-box > div.container > ul.product-list > li > div.product-name > a {display: inline-block; position: relative; margin-left: 60px; line-height: 60px;}
+div.product-list-box > div.container > ul.product-list > li > div.product-name > a::before {position: absolute; left: -50px; top: 50%; transform: translate(0, -50%); content: ''; width: 40px; height: 40px; background: url('../img/coffee/icon_blond.png') no-repeat;} 
+div.product-list-box > div.container > ul.product-list > li:nth-child(3) > div.product-name > a::before {background: url('../img/coffee/icon_dark.png') no-repeat;}
+div.product-list-box > div.container > ul.product-list > li:nth-child(4) > div.product-name > a::before {background: url('../img/coffee/icon_flavor.png') no-repeat;}
+div.product-list-box > div.container > ul.product-list > li:last-child > div.product-name > a::before {background: url('../img/coffee/icon_reserve_bean.png') no-repeat;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list {width: 100%; margin-top: 30px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list::after {display: block; content: ''; clear: both;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li {position: relative; float: left; width: calc(25% - 7.5px);  height: 300px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(5),
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(6),
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(7),
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(8) {margin-top: 50px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li + li {margin-left: 10px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(5) {margin-left: 0px;}
+div.product-list-box > div.container > ul.bean > li.blonde > ul.product-image-list > li:first-child::after {position: absolute; left: 75px; bottom: 60px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_season_limit.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.bean > li.medium > ul.product-image-list > li:first-child::after {position: absolute; left: 75px; bottom: 60px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_season_limit.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > a {position: relative; display: block; height: 280px; overflow: hidden; background-size: red;}
+div.product-list-box > div.container > ul.bean > li.blonde > ul.product-image-list > li:first-child > a::after {position: absolute; left: 30px; bottom: 40px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_new.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.bean > li.medium > ul.product-image-list > li:first-child > a::after {position: absolute; left: 30px; bottom: 40px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_new.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.bean > li.reserve > ul.product-image-list > li:first-child > a::after,
+div.product-list-box > div.container > ul.bean > li.reserve > ul.product-image-list > li:nth-child(2) > a::after,
+div.product-list-box > div.container > ul.bean > li.reserve > ul.product-image-list > li:nth-child(3) > a::after {position: absolute; left: 30px; bottom: 40px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_new.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > a > img {width: 100%; height: 280px; transition: transform 1s;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > a > img:hover {transform: scale(1.1);}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > span {display: block; text-align: center; font-size: 14px; font-weight: 600; color: #444;}
+
+
+
+
+#footer {width: 100vw; height: 760px; background-color: #2c2a29;}
+#footer > div.container {position: relative; width: 100%;; height: 100%; margin: 0 auto; /*background-color: #ffa59c*/}
+#footer > div.container > div.logo {position: absolute; right: 0; top: 50px; background: url('../img/footer_logo.png') center center no-repeat; width: 14px; height: 142px;}
+#footer > div.container > div.top {/*background-color: #64a70b;*/ width: 100%; height: 330px;}
+#footer > div.container > div.top > nav {/*background-color: bisque;*/ width: 100%; height: 100%;}
+#footer > div.container > div.top > nav > ul {/*background-color: cadetblue;*/ width: 100%; height: 100%; font-size: 14px;}
+#footer > div.container > div.top > nav > ul > li {float: left; width: 30%; height: 135px; margin-top: 30px; color: #fff; }
+#footer > div.container > div.top > nav > ul > li > a {font-size: 14px;}
+#footer > div.container > div.top > nav > ul > li:first-child {margin-left: 20px;}
+#footer > div.container > div.top > nav > ul > li:nth-child(4),
+#footer > div.container > div.top > nav > ul > li:nth-child(5),
+#footer > div.container > div.top > nav > ul > li:nth-child(6) {margin-top: 40px;}
+#footer > div.container > div.top > nav > ul > li + li {margin-left: 20px;}
+#footer > div.container > div.top > nav > ul > li > ul {margin-top: 20px; font-size: 12px;}
+#footer > div.container > div.top > nav > ul > li > ul > li + li {margin-top: 3px;}
+#footer > div.container > div.middle-top {width: 100%; height: 60px;  margin-top: 10px;}
+#footer > div.container > div.middle-top > ul {width: 455px; height: 100%; margin: 0 auto;}
+#footer > div.container > div.middle-top > ul > li {position: relative; float: left; box-sizing: border-box; width: 145px; height: 60px;}
+#footer > div.container > div.middle-top > ul > li + li {margin-left: 10px;}
+#footer > div.container > div.middle-top > ul > li > a {display: block; color: #fff; font-size: 24px; font-weight: 500; line-height: 54px; text-align: center; border: 3px solid #fff; transition: all 0.5s;}
+#footer > div.container > div.middle-top > ul > li > a:hover {text-decoration-line: underline;}
+#footer > div.container > div.middle-bottom {margin-top: 50px; /*background-color: darkblue;*/ width: 100%; height: 50px;}
+#footer > div.container > div.middle-bottom > div.box {position: relative; /*background-color: darkorange;*/ width: 254px; height: 100%; margin: 0 auto; overflow: hidden;}
+#footer > div.container > div.middle-bottom > div.box > ul.reward {position: absolute; /*background-color: darkorchid;*/ width: 100%; height: 100%;}
+#footer > div.container > div.middle-bottom > div.box > ul.reward > li {position: absolute;  width: 100%; height: 40px;}
+#footer > div.container > div.middle-bottom > div.box > ul.reward > li > a {position: relative; display: block; height: 100%;}
+#footer > div.container > div.middle-bottom > div.box > ul.reward > li > a > img {position: absolute; left: 50%; transform: translate(-50%);}
+#footer > div.container > div.middle-bottom > div.controller {position: relative;  width: 100%; height: 14px;}
+#footer > div.container > div.middle-bottom > div.controller > a {display: inline-block; width: 12px; height: 14px; position: absolute; left: 50%; transform: translate(-50%, 0);}
+#footer > div.container > div.middle-bottom > div.controller > a > i {display: none; color:#665f5a}
+#footer > div.container > div.middle-bottom > div.controller > a > i:first-child {display: block;}
+#footer > div.container > div.middle-bottom > div.controller > a.on > i:first-child {display: none;}
+#footer > div.container > div.middle-bottom > div.controller > a.on > i:last-child {display: block;}
+#footer > div.container > div.down {/*background-color: deepskyblue;*/ width: 100%; height: 450px; margin-top: 50px;}
+#footer > div.container > div.down > div.copy-right {/*background-color: fuchsia;*/ width: 100%; height: 28px; text-align: center;}
+#footer > div.container > div.down > div.copy-right > ul {width: 672px; height: 100%; /*background-color:lightcoral;*/ margin: 0 auto;}
+#footer > div.container > div.down > div.copy-right > ul > li {position: relative; font-size: 12px; float: left; width: 158px; height: 14px;}
+#footer > div.container > div.down > div.copy-right > ul > li:first-child {margin-left: 10px; color: #00b050}
+#footer > div.container > div.down > div.copy-right > ul > li:nth-child(5),
+#footer > div.container > div.down > div.copy-right > ul > li:nth-child(6),
+#footer > div.container > div.down > div.copy-right > ul > li:nth-child(7),
+#footer > div.container > div.down > div.copy-right > ul > li:nth-child(8) {margin-top: 5px;}
+#footer > div.container > div.down > div.copy-right > ul > li + li {margin-left: 10px; color: #fff;}
+#footer > div.container > div.down > div.copy-right > ul > li + li::after {display: none; position: absolute; left: -5px; top: 0; content: '|'; color: #999;}
+#footer > div.container > div.down > div.copy-right > ul > li > a:hover {text-decoration-line: underline;}
+#footer > div.container > div.down > div.btn {width: 100%; height: 35px; margin-top: 30px;}
+#footer > div.container > div.down > div.btn > ul {width: 350px; height: 100%; margin: 0 auto;}
+#footer > div.container > div.down > div.btn > ul > li {float: left;  box-sizing: border-box; width: 110px; height: 30px;}
+#footer > div.container > div.down > div.btn > ul > li + li {margin-left: 10px;}
+#footer > div.container > div.down > div.btn > ul > li > a {/*background: cadetblue;*/ font-size: 12px; display: block; text-align: center; line-height: 30px; border: 1px solid #fff; border-radius: 5px; color: #fff }
+#footer > div.container > div.down > div.btn > ul > li > a:hover {text-decoration-line: underline;}
+#footer > div.container > div.down > div.info {/*background-color: indianred;*/ font-size: 12px; color: #999; width: 100%; height: 50px; margin-top: 30px;}
+#footer > div.container > div.down > div.info > ul {/*background-color: chartreuse;*/ width: 700px; height: 14px; margin: 0 auto;}
+#footer > div.container > div.down > div.info > ul > li {float: left;}
+#footer > div.container > div.down > div.info > ul > li + li {margin-left: 20px;}
+#footer > div.container > div.down > div.info > div.wrap {background-color: #D1131D; width: 291px; height: 14px; margin: 0 auto; margin-top: 10px;}
+#footer > div.container > div.down > div.info > div.wrap > span.info-en {/*background-color: #D1131D;*/  display: inline-block; width: 100%; height: 100%;}
+
+
+
+@media screen and (max-width: 800px) {
+  #main-visual > div.container > ul > li:last-child {right: 0px;}
+
+
+  section.notice > div.container > div.left-notice > span.btn {right: 35%;}
+  section.notice > div.container > div.right-promotion > h3 {margin-left: 250px;}
+
+  section.blend.move > div.container > div.txt-box {right: 180px;}
+}
+
+@media screen and (max-width: 750px) {
+  
+  #main-visual > div.container > ul > li:last-child {right: -30px;}
+
+  section.notice > div.container > div.left-notice > span.btn {right: 45%;}
+
+  section.blend.move > div.container > div.txt-box {right: 150px;}
+
+  div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li { width: calc(50% - 5px);  height: 300px;}
+  div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(2n - 1) {margin-left: 0px;}
+  div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(2n) {margin-left: 10px;}
+
+  #footer > div.container > div.down > div.info {/*background-color: indianred;*/ font-size: 12px; color: #999; width: 100%; height: 80px; margin-top: 30px;}
+  #footer > div.container > div.down > div.info > ul {/*background-color: chartreuse;*/ width: 545px; height: 28px;  margin: 0 auto;}
+  #footer > div.container > div.down > div.info > ul > li {float: left; }
+}
+
+@media screen and (max-width: 700px) {
+  #main-visual > div.container > ul > li:first-child {width: 240px; height: 220px;}
+  #main-visual > div.container > ul > li:nth-child(2) {width: 200px; height: 320px; left: 220px;  top: 28%;}
+  #main-visual > div.container > ul > li:last-child {width: 250px; height: 330px; right: 50px;}
+
+  section.blend.move > div.container > div.txt-box {right: 80px;}
+
+  div.product-type-box > div.container {position: relative; max-width: calc(1100px) ; margin: 0 auto; height: calc(250px - 2px);}
+  div.product-type-box > div.container > ul.type-list {height: 35px; width: 100%; margin-top: 50px;}
+  div.product-type-box > div.container > ul.type-list > li {float: left; width: 150px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+  div.product-type-box > div.container > ul.type-list > li > a {display: block; height: 100%; line-height: 35px;border-radius: 4px; text-align: center; color: #222222; font-size: 12px; background-color: #f4f4f1;}
+
+  div.product-type-box > div.container > ul.flavor-list { margin-top: 30px; height: 83px; font-size: 12px; color: #666666; width: 100%;}
+  div.product-type-box > div.container > ul.flavor-list > li {width: 50%; }
+  div.product-type-box > div.container > ul.flavor-list > li {margin-left: 0;}
+  div.product-type-box > div.container > ul.flavor-list > li + li {margin-left: 0;}
+}
+
+@media screen and (max-width: 650px) {
+  #main-visual {background-color: #D1131D; margin-top: 70px; width: 100vw; height: 2150px;}
+  #main-visual > div.badge {top: 100px;}
+  #main-visual > div.container > div.main-visual-slogan {width: 340px; height: 135px;}
+  #main-visual > div.container > span.btn-slogan {left: 50%; top: 2000px; transform: translate(-50%, 0);}
+  #main-visual > div.container > ul > li > img.pc-650px {display: none;}
+  #main-visual > div.container > ul > li > img.mobile {display: inline-block;}
+  #main-visual > div.container > ul {width: 100%; height: 100%;}
+  #main-visual > div.container > ul > li:first-child {width: 440px; height: 330px; left: 50%; top: 250px; transform: translate(-50%, 0);}
+  #main-visual > div.container > ul > li:first-child::before {left: 10%; top: 5%;}
+  #main-visual > div.container > ul > li:nth-child(2) {width: 410px; height: 460px; left: 55%; top: 550px; transform: translate(-50%, 0);}
+  #main-visual > div.container > ul > li:last-child {width: 440px; height: 840px; left: 50%; top: 1100px; transform: translate(-50%, 0);}
+  #main-visual > div.container > ul > li:last-child::after {right: -500px; top: -150px;}
+
+  section.notice {position: relative; width: 100vw; height: 220px;}
+  section.notice::before,
+  section.notice::after {display: none;}
+  
+  section.notice > div.container {width: 100%; height: 100%;}
+  section.notice > div.container > div.left-notice {display: block; width: 100%; height: 110px; position: relative; background-color: black;}
+  section.notice > div.container > div.left-notice > h3 {position: relative; height: 110px;}
+  section.notice > div.container > div.left-notice > h3 > p {position: absolute; left: 30px; top: 50%; transform: translate(0, -50%); background: url('../img/left-notice_h3_m.png') center center no-repeat; width: 32px; height: 32px;}
+  section.notice > div.container > div.left-notice > h3 > img {display: none;}
+  section.notice > div.container > div.left-notice > div.box { width: 100%; height: 100%;}
+  section.notice > div.container > div.left-notice > div.box > ul.slide {}
+  section.notice > div.container > div.left-notice > div.box > ul.slide > li {width: 60%; line-height: 110px; }
+  section.notice > div.container > div.left-notice > div.box > ul.slide > li > a {font-size: 18px;}
+  section.notice > div.container > div.left-notice > span.btn {right: 40px;}
+  section.notice > div.container > div.right-promotion {display: block; width: 100%; height: 110px; position: relative; background-color: #f6f5ef;}
+  section.notice > div.container > div.right-promotion > h3 {line-height: 110px; margin-left: 150px; font-size: 24px;}
+
+  section.banner-slide > p.control > a.play {left: 43%;}
+
+  section.reward {height: 700px;}
+  section.reward > div.container > div.logo {left: 50%; top: 50px; transform: translate(-50%, 0);}
+  section.reward > div.container > div.info-box {left: 50%; top: 280px; transform: translate(-50%, 0); text-align: center;}
+  section.reward > div.container > div.info-box > div.top-info::after {}
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn {width: 460px; height: 40px; left: 50%; bottom: -30px; transform: translate(-50%, 0);}
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:first-child,
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:last-child {width: 200px; height: 40px;}
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:first-child {line-height: 40px;}
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:last-child {line-height: 36px;}
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn {bottom: -35px;}
+  
+  section.reward > div.container > div.info-box > div.top-info > p,
+  section.reward > div.container > div.info-box > div.bottom-info > p {line-height: 24px;}
+  section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn {width: 400px; left: 50%; bottom: 25px; transform: translate(-50%, 0);}
+  br.under-650 {display: block;}
+
+  section.blend {height: 1100px;}
+  section.blend > div.container img.pc-650px {display: none;}
+  section.blend > div.container img.mobile {display: block;}
+
+  section.blend > div.container > div.img-box {/*background-color: blue;*/ width: 100%; height: 415px;  opacity: 0; left: 50%; top: -220px; transform: translate(-50%, -50%); z-index: 4;}
+  section.blend.move > div.container > div.img-box {left: 50%; top: 350px; transform: translate(-50%, -50%);}
+  section.blend > div.container > div.txt-box {width: 100%; height: 250px;  opacity: 0; left: 50%; top: 650px; transform: translate(-50%, 0);}
+  section.blend.move > div.container > div.txt-box {left: 50%; top: 650px; transform: translate(-50%, 0);}
+  section.blend > div.container > div.txt-box > div.blend-btn {position: absolute; left: 48%; top: 180px; transform: translate(-50%, 0);}
+
+  section.reserve {width: 100vw; height: 1174px; background: #094a3d}
+  section.reserve > div.container {width: 100%; height: 100%; background: #094a3d url('../img/m_reserve_christmas_bean_211018.jpeg') center center no-repeat; background-size: cover;}
+  section.reserve > div.container > div.reserve-title > img.pc-650px {display: none;}
+  section.reserve > div.container > div.reserve-btn {top: 85%;}
+
+  section.favorite > div.container > div.favorite-image {width: 480px; height: 340px;}
+
+  section.magazine {position: relative; width: 100vw; height: 1100px;}
+
+  section.store > div.container > div.visual-01 {left: 310px;}
+  section.store > div.container > div.visual-02 {left: 70px;}
+
+  #footer {height: 820px;}
+  #footer ul.under-650,
+  #footer img.under-650 {display: block;}
+  #footer > div.container > div.top > nav {/*background-color: bisque;*/ width: 100%; height: 100%;}
+  #footer > div.container > div.top > nav > ul {/*background-color: cadetblue;*/ width: 100%; height: 100%; font-size: 14px;}
+  #footer > div.container > div.top > nav > ul > li {width: 100%; height: auto; margin: 0;}
+  #footer > div.container > div.top > nav > ul > li:first-child {margin-left: 0px;}
+  #footer > div.container > div.top > nav > ul > li:nth-child(4),
+  #footer > div.container > div.top > nav > ul > li:nth-child(5),
+  #footer > div.container > div.top > nav > ul > li:nth-child(6) {margin-top: 0px;}
+  #footer > div.container > div.top > nav > ul > li > a {position: relative; background-color: #554c46; box-sizing: border-box; padding-left: 10px;  display: block; font-size: 14px; line-height: 49px; border-bottom: 1px solid rgba(0, 0, 0, 0.3);}
+  #footer > div.container > div.top > nav > ul > li > a:hover {text-decoration-line: underline;}
+  #footer > div.container > div.top > nav > ul > li > a > img {position: absolute; right: 40px; top: 50%; transform: translate(0, -50%); width: 20px; height: auto;}
+  #footer > div.container > div.top > nav > ul > li + li {margin-left: 0px;}
+  #footer > div.container > div.top > nav > ul > li > ul {margin-top: 0px; height: 0; overflow: hidden; transition: height 0.5s;}
+  #footer > div.container > div.top > nav > ul > li > ul > li + li {margin-top: 0px;}
+  #footer > div.container > div.top > nav > ul > li > ul > li > a {position: relative; display: block; background-color: #645952; color: #e6dbd3; box-sizing: border-box; padding-left: 10px; font-size: 14px; line-height: 50px;}
+  #footer > div.container > div.top > nav > ul > li > ul > li > a > img {position: absolute; right: 40px; top: 50%; transform: translate(0, -50%); width: 20px; height: auto;}
+  #footer > div.container > div.top > nav > ul > li > ul > li > ul {height: 0; overflow: hidden; transition: height 0.5s;}
+  #footer > div.container > div.top > nav > ul > li > ul > li > ul > li > a {position: relative; display: block; background-color: #76685e; color: #e6dbd3;  box-sizing: border-box; padding-left: 10px; font-size: 14px; line-height: 50px;}
+
+  #footer > div.container > div.down > div.copy-right {/*background-color: fuchsia;*/ width: 100%; height: 42px; text-align: center;}
+  #footer > div.container > div.down > div.copy-right > ul {width: 504px; height: 100%; /*background-color:lightcoral;*/ margin: 0 auto;}
+  #footer > div.container > div.down > div.copy-right > ul > li {position: relative; font-size: 12px; float: left; width: 158px; height: 14px;}
+  #footer > div.container > div.down > div.copy-right > ul > li:first-child {margin-left: 10px; color: #00b050}
+  #footer > div.container > div.down > div.copy-right > ul > li + li {margin-left: 10px; color: #fff;}
+
+  #footer > div.container > div.down > div.copy-right > ul > li:nth-child(4),
+  #footer > div.container > div.down > div.copy-right > ul > li:nth-child(5),
+  #footer > div.container > div.down > div.copy-right > ul > li:nth-child(6),
+  #footer > div.container > div.down > div.copy-right > ul > li:nth-child(7),
+  #footer > div.container > div.down > div.copy-right > ul > li:nth-child(8) {margin-top: 5px;}
+
+  #footer > div.container > div.down > div.info {/*background-color: indianred;*/ font-size: 12px; color: #999; width: 100%; height: 80px; margin-top: 30px;}
+  #footer > div.container > div.down > div.info > ul {/*background-color: chartreuse;*/ width: 257px; height: 96px;   margin: 0 auto; text-align: center;}
+  #footer > div.container > div.down > div.info > ul > li {float: left; width: 257px; height: 14px; }
+  #footer > div.container > div.down > div.info > ul > li + li {margin-left: 0; margin-top: 2px;}
+  #footer > div.container > div.down > div.info > ul > li:last-child {margin-left: 0;}
+
+}  
+
+@media screen and (max-width: 600px) {
+  div.product-type-box > div.container {position: relative; max-width: calc(1100px) ; margin: 0 auto; height: calc(250px - 2px);}
+  div.product-type-box > div.container > ul.type-list {height: 35px; width: 100%; margin-top: 50px;}
+  div.product-type-box > div.container > ul.type-list > li {float: left; width: 130px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+  div.product-type-box > div.container > ul.type-list > li + li {margin-left: 5px;}
+  div.product-type-box > div.container > ul.type-list > li > a {display: block; height: 100%; line-height: 35px;border-radius: 4px; text-align: center; color: #222222; font-size: 12px; background-color: #f4f4f1;}
+
+  div.product-type-box > div.container > ul.flavor-list { margin-top: 30px; height: 83px; font-size: 12px; color: #666666; width: 100%;}
+  div.product-type-box > div.container > ul.flavor-list > li {width: 50%; }
+  div.product-type-box > div.container > ul.flavor-list > li {margin-left: 0;}
+  div.product-type-box > div.container > ul.flavor-list > li + li {margin-left: 0;}
+}
+
+@media screen and (max-width: 550px) {
+  section.blend {height: 900px;}
+  section.blend > div.container > div.txt-box {top: 550px;}
+  section.blend.move > div.container > div.txt-box {top: 550px;}
+  section.blend > div.container > div.txt-box > div.blend-btn {top: 130px;}
+
+  section.reserve {height: 900px;}
+  section.reserve > div.container {background-size: cover;}
+
+  section.favorite > div.container > div.favorite-image {width: 460px; height: 314px;}
+
+  section.magazine {position: relative; width: 100vw; height: 1000px;}
+
+  section.store > div.container > div.visual-01 {left: 280px;}
+  section.store > div.container > div.visual-02 {left: 40px;}
+
+  div.product-type-box > div.container > ul.type-list > li {float: left; width: 120px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+
+}
+
+@media screen and (max-width: 414px) {
+  #main-visual {height: 2050px;}
+  div.gnb-box > a.btn-close {left: 40px; width: 20px; height: 20px;}
+
+  #gnb {width: 300px; font-size: 14px;}
+  #gnb > div.gnb-search {width: 300px; height: 70px;}
+  #gnb > div.gnb-search > input {width: 140px; height: 30px;}
+  #gnb > div.gnb-search > div.search-btn {width: 80px; height: 30px;}
+  #gnb > div.gnb-search > div.search-btn > a {font-size: 14px; line-height: 30px;}
+  #gnb > ul > li {width: 300px;}
+
+  #gnb > ul > li > a {line-height: 49px;}
+  #gnb > ul > li > a > img {width: 18px;}
+  #gnb > ul > li > ul > li > a {line-height: 49px;}
+  #gnb > ul > li > ul > li > a > img {width: 18px;}
+  #gnb > ul > li > ul > li > ul > li > a {line-height: 30px;}
+
+  #main-visual > div.container > span.btn-slogan {top: 1950px;}
+  #main-visual > div.container > ul > li:first-child {width: 380px;}
+  #main-visual > div.container > ul > li:nth-child(2) {width: 370px; height: 420px;}
+  #main-visual > div.container > ul > li:last-child {width: 380px; height: 840px; top: 1050px;}
+
+  section.banner-slide {height: 350px;}
+  section.notice {height: 140px;}
+  
+  section.notice > div.container > div.left-notice {height: 70px;}
+  section.notice > div.container > div.left-notice > h3 {position: relative; height: 70px; margin-left: 0px;}
+  section.notice > div.container > div.left-notice > span.btn {right: 30px;}
+  section.notice > div.container > div.left-notice > div.box {left: 80px;}
+  section.notice > div.container > div.left-notice > div.box > ul.slide > li {line-height: 70px;}
+  section.notice > div.container > div.left-notice > div.box > ul.slide > li > a {font-size: 14px;}
+  section.notice > div.container > div.left-notice > span.btn {right: 10px;}
+
+  section.notice > div.container > div.right-promotion {height: 70px;}
+  section.notice > div.container > div.right-promotion > h3 {margin-left: 120px; line-height: 70px;}
+
+  section.banner-slide > div.box {position: relative; width: 314px; height: 240px; margin: 50px auto 0 auto;}
+  section.banner-slide > div.box > ul.slide > li > a {padding: 8px 20px; font-size: 14px; border: 2px solid #000000;}
+  
+  section.banner-slide > p.control > a.prev,
+  section.banner-slide > p.control > a.next {display: none;}
+  section.banner-slide > p.control > a.play {left: 41%;}
+
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:first-child,
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:last-child {width: 160px; height: 40px;}
+  section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn {width: 300px;}
+
+  section.blend {height: 750px;}
+  section.blend.move > div.container > div.txt-box {top: 450px;}
+  section.blend.move > div.container > div.txt-box {top: 450px;}
+  section.blend > div.container > div.txt-box > div.blend-btn {top: 100px;}
+
+  section.favorite {height: 800px;}
+  section.favorite > div.container > div.favorite-image {width: 380px; height: 290px; background-size: contain;}
+  section.favorite > div.container > h2 {width: 250px; height: 72px; background-size: contain;}
+  section.favorite > div.container > div.txt-box {width: 300px; height: 129px; background-size: contain;}
+
+  section.favorite.move > div.container > h2 {top: 450px; }
+  section.favorite.move > div.container > div.txt-box {top: 520px;}
+
+  section.magazine {position: relative; width: 100vw; height: 750px;}
+
+  section.store > div.container > h2 {width: 280px; height: 71px;}
+  section.store > div.container > div.visual-01 {left: 210px; top: 130px; width: 170px; height: 168px; z-index: 5;}
+  section.store > div.container > div.visual-02 {left: 40px; top: 0; width: 240px; height: 204px;}
+  section.store > div.container > div.visual-03 {left: 70px; top: 220px; width: 180px; height: 73px;}
+  section.store > div.container > div.visual-04 {right: 50px; bottom: 0px; width: 170px; height: 75px;}
+  section.store > div.container > div.txt {left: 50%;  bottom: 0px; width: 300px; height: 71px;}
+  section.store.move > div.container > h2 {top: 330px;}
+  section.store.move > div.container > div.txt {bottom: 250px;}
+  section.store.move > div.container > div.btn {bottom: 150px;}
+
+  body.coffee div.content {width: calc(100vw - 10px); margin: 70px auto 0 auto; /*background-color: red;*/}
+  div.product-type-box > div.container {padding: 10px 10px 0 10px;}
+  div.product-type-box > div.container::before {position: absolute; left: 50%; top: 60px; transform: translate(-50%, 0); content: ''; width: calc(100% - 60px); height: 1px; background-color: #d9d9d9;}
+  div.product-type-box > div.container > a.btn {position: absolute; right: 3px; top: 10px;}
+  div.product-type-box > div.container > ul.type-list {width: 90%;}
+  div.product-type-box > div.container > ul.type-list > li {float: left; width: 108px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+  div.product-type-box > div.container > ul.flavor-list { margin-top: 30px; height: 83px; font-size: 12px; color: #666666; width: 90%;}
+ 
+  #footer {height: 850px;}
+  #footer > div.container > div.middle-top {width: 100%; height: 45px; margin-top: 30px;}
+  #footer > div.container > div.middle-top > ul {width: 365px; height: 100%; margin: 0 auto;}
+  #footer > div.container > div.middle-top > ul > li {width: 115px; height: 45px;}
+  #footer > div.container > div.middle-top > ul > li > a {display: block; color: #fff; font-size: 17px; font-weight: 500; line-height: 39px; text-align: center; border: 3px solid #fff; transition: all 0.5s;}
+
+  #footer > div.container > div.down > div.btn {margin-top: 0;}
+  #footer > div.container > div.down > div.copy-right {height: 82px;}
+  #footer > div.container > div.down > div.copy-right > ul {width: 336px; height: 100%; /*background-color:lightcoral;*/ margin: 0 auto;}
+  #footer > div.container > div.down > div.copy-right > ul > li {position: relative; font-size: 12px; float: left; width: 158px; height: 14px;}
+  #footer > div.container > div.down > div.copy-right > ul > li:first-child {margin-left: 10px; color: #00b050}
+  #footer > div.container > div.down > div.copy-right > ul > li + li {margin-left: 10px; color: #fff;}
+  #footer > div.container > div.down > div.copy-right > ul > li:nth-child(3) {margin-top: 5px;}
+
+}
+
+@media screen and (max-width: 412px) {
+
+}
+
+@media screen and (max-width: 411px) {
+  section.banner-slide > div.box > ul.slide > li > a {bottom: -20px;}
+
+
+}
+
+@media screen and (max-width: 393px) {
+  div.product-type-box > div.container > ul.type-list {width: 100%;}
+  div.product-type-box > div.container > ul.type-list > li {float: left; width: 108px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+}
+
+@media screen and (max-width: 375px) {
+  #main-visual {height: 1650px;}
+  #main-visual > div.badge {width: 95px; height: 70px; right: 10px;} 
+  #main-visual > div.container > div.main-visual-slogan {width: 220px; height: 90px;}
+  #main-visual > div.container > span.btn-slogan {top: 1500px;}
+  #main-visual > div.container > ul > li:first-child {width: 300px; height: 230px; top: 200px;}
+  #main-visual > div.container > ul > li:first-child::before {left: 0; top: 0;}
+  #main-visual > div.container > ul > li:nth-child(2) {width: 320px; height: 350px; top: 400px;}
+  #main-visual > div.container > ul > li:last-child {width: 340px; height: 650px;}
+  #main-visual > div.container > ul > li:last-child::after {right: -200px; top: -100px;}
+  #main-visual > div.container > ul > li:last-child {width: 340px; height: 650px; top: 800px;}
+
+  section.notice > div.container > div.right-promotion > h3 {margin-left: 80px;}
+  section.notice > div.container > div.right-promotion > span.btn {right: 5%;}
+
+  section.reward > div.container > div.logo {width: 150px; height: 130px;}
+  section.reward > div.container > div.info-box {top: 220px;}
+  section.reward > div.container > div.info-box > div.top-info > h2 {font-size: 20px;}
+  section.reward > div.container > div.info-box > div.top-info > p {font-size: 14px;}
+  section.reward > div.container > div.info-box > div.bottom-info > p {font-size: 14px;}
+
+  section.reserve {height: 700px;}
+  section.reserve > div.container {background-size: contain;}
+  section.reserve > div.container > div.reserve-btn {left: 35%; top: 90%;}
+
+  section.favorite > div.container > div.favorite-image {width: 320px;}
+ 
+  section.store > div.container > div.visual-01 {left: 190px;}
+  section.store > div.container > div.visual-02 {left: 20px;}
+
+  div.product-type-box > div.container > ul.type-list {width: 100%;}
+
+}
+
+
+@media screen and (max-width: 360px) {
+  div.gnb-box > a.btn-close {left: 10px;}
+
+  section.banner-slide > p.control > a.play {left: 40%;}
+
+  section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn {bottom: 15px;}
+
+  div.product-type-box > div.container > ul.type-list > li {float: left; width: 107px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+  div.product-type-box > div.container > ul.type-list > li:first-child,
+  div.product-type-box > div.container > ul.type-list > li:nth-child(2) {width: 90px;} 
+}
+
+
+@media screen and (max-width: 320px) {
+  #gnb {width: 280px; font-size: 14px; right: -30px; height: 650px;}
+  #gnb > div.gnb-search {width: 280px; height: 70px;}
+  #gnb > div.gnb-search > input {width: 120px; height: 30px;}
+  #gnb > div.gnb-search > div.search-btn {width: 80px; height: 30px;}
+  #gnb > div.gnb-search > div.search-btn > a {font-size: 14px; line-height: 30px;}
+  #gnb > ul > li {width: 280px;}
+  #gnb > ul > li > ul > li > ul > li > a {line-height: 30px;}
+
+  #main-visual {width: 400px;}
+  #main-visual > div.container > span.btn-slogan {left: 45%; transform: translate(-50%, 0);}
+  #main-visual > div.container > ul > li:first-child {left: 45%;}
+  #main-visual > div.container > ul > li:nth-child(2) {left: 45%;}
+  #main-visual > div.container > ul > li:last-child {left: 45%;}
+
+  section.notice {width: 360px;}
+
+  section.banner-slide {width: 360px;}
+
+  section.reward {width: 360px;}
+
+  section.blend {width: 360px; height: 700px;}
+
+  section.reserve {width: 360px; height: 550px;}
+  section.reserve > div.container {background-size: 100%;}
+
+  section.favorite {width: 360px; height: 700px;}
+  section.favorite > div.container > div.favorite-image {top: 30px;}
+
+  section.favorite.move > div.container > h2 {top: 350px;}
+  section.favorite.move > div.container > div.txt-box {top: 420px;}
+
+  section.magazine {width: 360px;}
+
+  section.store {width: 360px;}
+  section.store > div.container > div.visual-01 {left: 190px; width: 150px; height: 148px;}
+  section.store > div.container > div.visual-02 {left: 20px; width: 220px; height: 184px;}
+
+  #footer {width: 360px;}
+  #footer > div.container > div.top {width: 360px;}
+
+
+  #footer > div.container > div.middle-top {width: 360px; height: 45px; margin-top: 0px;}
+  #footer > div.container > div.middle-top > ul {width: 320px; height: 100%; margin: 0 auto;}
+  #footer > div.container > div.middle-top > ul > li {width: 100px; height: 45px;}
+  #footer > div.container > div.middle-top > ul > li > a {display: block; color: #fff; font-size: 17px; font-weight: 500; line-height: 39px; text-align: center; border: 3px solid #fff; transition: all 0.5s;}
+
+  
+  #footer > div.container > div.down > div.btn > ul {width: 290px; height: 100%; margin: 0 auto;}
+  #footer > div.container > div.down > div.btn > ul > li {float: left;  box-sizing: border-box; width: 90px; height: 20px;}
+}

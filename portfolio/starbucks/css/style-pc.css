@@ -1,0 +1,444 @@
+@charset "uft-8";
+
+/* reset */
+html {-webkit-text-size-adust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+img {vertical-align: middle; max-width: 100%;}
+address, em, i ,cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i[class^="fa"] {position: relative; display: inline-block; vertical-align: middle; overflow: hidden;}
+i[class^="fa"] span {position: absolute; left: -9999px;}
+.ir-hidden {position: absolute; left: -9999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m::after {content: '\00a0';}
+br.under-650 {display: none;}
+ul.under-650, 
+img.under-650 {display: none;}
+
+body {font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif; font-size: 14px; color: #000000; letter-spacing: -0.03em; background-color: #ffffff;}
+#wrapper {min-width: 1024px; overflow: hidden;}
+#skip-nav {position: fixed; left: 0; top: -100px; width: 100%; line-height: 60px; background-color: #585757; color: #ffffff;
+text-align: center; z-index: 10001;}
+#skip-nav:focus {top: 0;}
+
+
+#header {background-color: #f6f5ef; position: fixed; top: 0; left: 0; width: 100%; height: 120px; font-size: 14px; z-index: 10000;}
+#header .wrapper {position: relative; max-width: 1100px; height: 100%; margin: 0 auto;}
+#header .wrapper h2 {position: absolute; left: 0; top: 50%; transform: translate(0, -50%);}
+#header .wrapper .top-menu {position: absolute; right: 70px; top: 20px;}
+#header .wrapper .top-menu li {float: left; font-size: 12px;}
+#header .wrapper .top-menu li + li {margin-left: 25px; position: relative;}
+#header .wrapper .top-menu li + li::before {position: relative; left: -10px; content: 'ㅣ'; font-size: 12px; color: #fff;}
+#header .wrapper p.btn_search {position: absolute; right: 15px; top: 10px;}
+#header .wrapper p.btn_search {border: 1px solid #e0e0e0; width: 35px; height: 35px; border-radius: 8px;}
+#header .wrapper p.btn_search > a {position: relative;  display: block; height: 100%;}
+#header .wrapper p.btn_search > a > img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+#header::after {background-color: #2c2a29; width: 100%; height: 0px; display: block; content: ''; transition: height 0.5s;}
+#header.open::after {height: 390px;}
+#header::before {background: url('../img/common/gnb_bg.jpg'); display: block; content: ''; position: absolute; left: 0; top: 120px;
+width: 100%; height: 0px; transition: all 0.5s;}
+#header.open::before {height: 150px; top: 510px;}
+
+
+#gnb {position: absolute; top: 80px; width: 100%; height: 30px;}
+#gnb > ul {width: 800px; height: 100%; margin-left: 350px;}
+#gnb > ul > li {float: left;}
+#gnb > ul > li + li {margin-left: 50px;}
+#gnb > ul > li > a {font-size: 12px;}
+#gnb > ul > li > ul {position: absolute;  left: 0; top: 40px; color: #ffffff; width: 1100px; height: 0px;}
+#gnb > ul > li > ul > li {float: left;  opacity: 0; width: 20%; margin-top: 20px; visibility: hidden;}
+#gnb > ul > li > ul > li.open {visibility: visible; height: 112px; opacity: 1; transition: opacity 1.5s;}
+#gnb > ul > li > ul > li:nth-child(6) {margin-top: 100px;}
+#gnb > ul > li > ul > li > a {color: #fff; font-size: 14px; font-weight: normal;}
+#gnb > ul > li > ul > li > ul {font-size: 12px; color: #999}
+#gnb > ul > li > ul > li > ul > li:first-child {margin-top: 20px;} 
+#gnb > ul > li > ul > li > ul > li + li {margin-top: 5px;}
+
+#gnb > ul > li > div.txt-box {opacity: 0; position: absolute; left: 0; top: 420px; margin-top: 30px; /*background-color: salmon;*/ visibility: hidden;}
+#gnb > ul > li > div.txt-box.open {opacity: 1; animation: fade-in 1.5s; visibility: visible;}
+#gnb > ul > li > div.txt-box > p.txt-down {margin-top: 10px;} 
+#gnb > ul > li > div.txt-box {font-size: 12px;}
+#gnb > ul > li > div.txt-box a.title {color: #999;}
+#gnb > ul > li > div.txt-box p.description {margin-top: 5px; color: #64a70b;}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* main page */
+#main-visual {background-color: #D1131D; margin-top: 120px; width: 100vw; height: 640px; } 
+#main-visual > div.badge {display: inline-block; position: fixed; right: 0%; top: 30%; z-index: 9999;}
+#main-visual > div.container {position: relative; /*background-color: blue;*/ max-width: 1100px; height: 100%; margin: 0 auto;}
+#main-visual > div.container > div.main-visual-slogan {display: inline-block; /*background-color: brown;*/ margin-top: 50px;}
+#main-visual > div.container > span.btn-slogan {position: absolute; top: 220px; left: 88px; width: 100px; height: 30px; border: 1px solid #fff; border-radius: 4px;}
+#main-visual > div.container > span.btn-slogan > a {display: inline-block; color: #fff; font-size: 15px; 
+width: 100%; line-height: 30px; text-align: center; }
+#main-visual > div.container > span.btn-slogan > a:hover {background-color: rgba(255, 255, 255, 0.5); text-decoration-line: underline;}
+#main-visual > div.container > ul {/*background-color: bisque;*/ width: 100%; height: 400px;}
+#main-visual > div.container > ul > li {position: absolute; opacity: 0;}
+#main-visual > div.container > ul > li:first-child {left: 10%; top: 25%; animation: show-up 1s ease-in 0.6s 1 normal forwards;}
+#main-visual > div.container > ul > li:first-child::before { display: block; content: ''; background: url('../img/2021_chiristmas2_bg_left.png') no-repeat center;
+position: absolute; left: 20%; top: 30%; width: 47px; height: 69px;}
+#main-visual > div.container > ul > li:nth-child(2) {left: 45%; top: 15%; animation: show-up 1s ease-in 1.2s 1 normal forwards;}
+#main-visual > div.container > ul > li:last-child {right: -10%; top: 13%; animation: show-up 1s ease-in 1.5s 1 normal forwards;}
+#main-visual > div.container > ul > li:last-child::after {display: block; content: ''; background: url('../img/2021_chiristmas2_bg_right.png') no-repeat center;
+position: absolute; left: 65%; top: 25%; width: 29px; height: 31px;}
+
+@keyframes show-up {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+section.notice {position: relative; width: 100vw; height: 60px;}
+section.notice::before {content: ''; width: 50%; height: 100%;  background-color: #111;
+position: absolute; left: 0; top: 0;}
+section.notice::after {content: ''; width: 50%; height: 100%;  background-color: #f6f5ef;
+position: absolute; right: 0; top: 0;}
+section.notice > div.container {position: relative;  max-width: 1100px; height: 100%; margin: 0 auto;}
+section.notice > div.container > div.left-notice {position: absolute; left: 0; top: 0; width: 550px; height: 100%;}
+section.notice > div.container > div.left-notice > h3 {line-height: 60px;}
+section.notice > div.container > div.left-notice > span.btn {position: absolute; right: 5%; top: 50%; transform: translate(0%, -50%); width: 35px; height: 35px; color: #c19d55;}
+section.notice > div.container > div.left-notice > div.box {position: absolute; left: 20%; top: 0; width: 550px; height: 100%; overflow: hidden;}
+section.notice > div.container > div.left-notice > div.box > ul.slide {position: absolute; left: 0; top: 50%; transform: translate(0, -50%); width: 100%; height: 100%;}
+section.notice > div.container > div.left-notice > div.box > ul.slide > li {position: absolute; left: 0; top: 0; width: 50%; line-height: 60px;
+display: none;}
+section.notice > div.container > div.left-notice > div.box > ul.slide > li > a {display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color: #fff}
+
+section.notice > div.container > div.right-promotion {position: absolute; /*right: -10%;*/ right: 0%; top: 0; /*background-color: red;*/ 
+width: 550px; height: 100%; z-index: 10;}
+section.notice > div.container > div.right-promotion > h3 {line-height: 60px; margin-left: 150px;}
+section.notice > div.container > div.right-promotion > span.btn {position: absolute; right: 10%; top: 50%; transform: translate(0, -50%); cursor: pointer; width: 35px; height: 35px;}
+section.notice > div.container > div.right-promotion > span.btn > img {display: none;}
+section.notice > div.container > div.right-promotion > span.btn > img:first-child {display: block;}
+section.notice > div.container > div.right-promotion > span.btn.change > img:first-child {display: none;}
+section.notice > div.container > div.right-promotion > span.btn.change > img:last-child {display: block;}
+
+section.banner-slide {position: relative; background-color: #f6f5ef; width: 100vw; /*height: 0;*/ height: 650px; transition: height 0.5s; overflow: hidden;}
+section.banner-slide.change {height: 0px;}
+section.banner-slide > div.box {position: relative; max-width: 800px; height: 540px; margin: 50px auto 0 auto;}
+section.banner-slide > div.box > ul.slide {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+section.banner-slide > div.box > ul.slide > li {position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0.4;}
+section.banner-slide > div.box > ul.slide > li > img {width: 100%; height: 100%;}
+section.banner-slide > div.box > ul.slide > li > a {position: absolute; left: 50%; bottom: 10px; transform: translate(-50%, 0);
+border: 3px solid #222222; padding: 10px 25px; font-size: 14px; transition: all 0.3s;}
+section.banner-slide > div.box > ul.slide > li:nth-child(2) > a {bottom: 20px;}
+section.banner-slide > div.box > ul.slide > li > a:hover {background-color: #000000; color: #ffffff; font-weight: 900; text-decoration-line: underline;}
+section.banner-slide > ul.indicator {position: absolute; left: 50%; bottom: 25px; transform: translate(-50%, 0); width: 100;}
+section.banner-slide > ul.indicator > li {display: inline-block;}
+section.banner-slide > ul.indicator > li > a {display: block; text-indent: -9999px; width: 13px; height: 12px; background: url('../img/banner-slide_indicator.png') no-repeat center;}
+section.banner-slide > ul.indicator > li.on > a {background: url('../img/banner-slide_indicator_click.png') no-repeat center;}
+section.banner-slide > p.control > a.prev,
+section.banner-slide > p.control > a.next {position: absolute; top: 30%;  width: 50px; height: 50px; border-radius: 25px; border-radius: 100%; border: 1px solid #222222; transition: all 0.5s;}
+section.banner-slide > p.control > a.prev {left: 25%; z-index: 5;}
+section.banner-slide > p.control > a.next {right: 25%;}
+section.banner-slide > p.control > a.prev > img,
+section.banner-slide > p.control > a.next > img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+section.banner-slide > p.control > a.prev:hover,
+section.banner-slide > p.control > a.next:hover {background: #fff;}
+section.banner-slide > p.control > a.play {position: absolute; left: 47%; bottom: 29px;}
+section.banner-slide > p.control > a.play > img {display: none;}
+section.banner-slide > p.control > a.play > img:first-child {display: block;}
+section.banner-slide > p.control > a.play.on > img:first-child {display: none;}
+section.banner-slide > p.control > a.play.on > img:last-child {display: block;}
+
+section.reward {background: #1E3932; width: 100vw; height: 240px;}
+section.reward > div.container {position: relative; max-width: 1100px; height: 100%; margin: 0 auto;}
+section.reward > div.container > div.logo {position: absolute; left: 20px; top: 50%; transform: translate(0 , -50%); width: 175px; height: 150px;}
+section.reward > div.container > div.info-box {position: absolute; left: 220px; top: 50%; transform: translate(0%, -50%); color: #fff; width: 850px;}
+section.reward > div.container > div.info-box strong {font-weight: 900;}
+section.reward > div.container > div.info-box > div.top-info {width: 100%;}
+section.reward > div.container > div.info-box > div.top-info > h2 {font-size: 26px; font-weight: 500; margin-bottom: 12px;}
+section.reward > div.container > div.info-box > div.top-info > p,
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn {font-size: 17px;}
+section.reward > div.container > div.info-box > div.top-info::after {position: absolute; left: 0%; top: 90px; content:''; width: 100%; height: 2px; background: rgba(255, 255, 255, 0.4);}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn {position: absolute; right: 0px; top: 45px;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a {display: inline-block;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:hover {text-decoration-line: underline;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:first-child {background-color: #00704A; box-sizing: border-box; width: 90px; line-height: 38px; text-align: center; border-radius: 4px; margin-right: 10px;}
+section.reward > div.container > div.info-box > div.top-info > div.top-info-btn > a:last-child {box-sizing: border-box; width: 80px; line-height: 34px; text-align: center; border: 2px solid #fff; border-radius: 4px;}
+section.reward > div.container > div.info-box > div.bottom-info {margin-top: 20px; font-size: 14px;}
+section.reward > div.container > div.info-box > div.bottom-info > p > strong {font-size: 16px;}
+section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn {position: absolute; right: 0px; bottom: -4px; width: 180px; line-height: 34px; border: 2px solid #fff; border-radius: 4px; text-align: center;}
+section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn > a:hover {text-decoration-line: underline;}
+
+section.blend {background: #ffa59c url('../img/blend_bg.jpg') center center no-repeat; background-size: 100% 100%; width: 100vw; height: 520px;}
+section.blend > div.container {position: relative; /*background-color: brown;*/ max-width: 1100px; margin: 0 auto; height: 100%;}
+section.blend > div.container > div.img-box {/*background-color: blue;*/ position: absolute; /*left: 100px;*/ opacity: 0; left: -80%; top: 50%; transform: translate(0, -50%); transition: all  2s;}
+section.blend.move > div.container > div.img-box {left: 100px; opacity: 1;}
+section.blend > div.container > div.txt-box {/*background-color: lime;*/ position: absolute; /*right: 200px;*/opacity: 0; right: -80%; top: 50%; transform: translate(0, -50%); transition: all 2s;}
+section.blend.move > div.container > div.txt-box {right: 200px; opacity: 1;}
+
+section.blend > div.container > div.txt-box > div.blend-btn {margin-top: 20px; font-size: 15px; box-sizing: border-box; width: 120px; height: 35px; }
+section.blend > div.container > div.txt-box > div.blend-btn > a {display: block; line-height: 35px; /*background-color: yellow;*/ text-align: center; border: 1px solid #000000; border-radius: 5px; transition: all 0.5s;}
+section.blend > div.container > div.txt-box > div.blend-btn > a:hover {text-decoration-line: underline; background-color: #000000; color: #fff}
+
+section.reserve {position: relative; /*background-color: #094a3d;*/ height: 357px; background: url('../img/reserve_christmas.jpg') center center no-repeat; background-size: cover;}
+section.reserve > div.container {position: relative; max-width: 1100px; margin: 0 auto;  /*background-color: blue;*/}
+section.reserve > div.container > div.reserve-title {position: relative; z-index: 5; margin-left: 40px;  line-height: 400px;}
+section.reserve > div.container > div.reserve-btn {position: absolute; left: 40%; top: 65%;  z-index: 5;  font-size: 15px; box-sizing: border-box; width: 120px; height: 35px; }
+section.reserve > div.container > div.reserve-btn > a {display: block; line-height: 35px; text-align: center; border: 1px solid #d5a012; border-radius: 5px; color: #d5a012; transition: all 0.5s;}
+section.reserve > div.container > div.reserve-btn > a:hover {text-decoration-line: underline; border: 1px solid transparent;  border-radius: 5px; background-color: #d5a012; color: #fff}
+
+section.favorite {width: 100vw; height: 800px; background: url('../img/fav_bg.jpg') center center no-repeat; background-size: auto 100%; background-attachment: fixed;}
+section.favorite > div.container {position: relative; max-width: 1100px; height: 800px; margin: 0 auto; /*background-color: blanchedalmond;*/}
+
+section.favorite > div.container > h2 {background: url('../img/fav_prod_h2.png') center center no-repeat; background-size: cover; position: absolute; 
+opacity: 0; left: -65%; top: 150px;  width: 258px; height: 204px; transition: all 2s;}
+section.favorite.move > div.container > h2 {left: 107px; opacity: 1;}
+
+section.favorite > div.container > div.txt-box {background: url('../img/fav_prod_txt.png') center center no-repeat; position: absolute; opacity: 0; left: -70%; top: 400px;  width: 362px; height: 156px;  transition: all 2s; transition-delay: 0.3s;}
+section.favorite.move > div.container > div.txt-box {left: 0px; opacity: 1;}
+section.favorite > div.container > div.favorite-image {background: url('../img/2021_christmas2_fav.png') center center no-repeat; position: absolute;
+opacity: 0; right: -100%; top: 100px; width: 672px; height: 458px; transition: all 2s;}
+section.favorite.move > div.container > div.favorite-image {right: 0; opacity: 1;}
+
+section.favorite > div.container > div.favorite-btn {/*background-color: blue;*/ position: absolute; left: 243px; bottom: 130px; font-size: 15px; box-sizing: border-box; width: 120px; height: 35px;}
+section.favorite > div.container > div.favorite-btn > a {display: block; /*background-color: yellow;*/ line-height: 35px; text-align: center; border: 1px solid #fff; border-radius: 5px; color: #fff; transition: all 0.5s;}
+section.favorite > div.container > div.favorite-btn > a:hover {border: 1px solid transparent; background-color: #fff; color: #000; text-decoration-line: underline;}
+
+section.magazine {position: relative; width: 100vw; height: 400px; background: url('../img/magaizne_bg.png') 50% 100% no-repeat; z-index: 5;}
+section.magazine > div.container {position: relative; width: 1100px; height: 100%; margin: 0 auto;}
+section.magazine > div.container > h2 {background: url('../img/magaizne_titile.png') center center no-repeat; background-size: cover; width: 588px; height: 97px; position: absolute; left: 0; top: 50%; transform: translate(0, -50%); transition: all 0.5s;}
+section.magazine > div.container > div.image {background: url('../img/magaizne_image.png') center center no-repeat; background-size: cover; width: 348px; height: 374px; position: absolute; left: 60%; top: 49%; transform: translate(0, -52%); transition: all 0.5s;}
+section.magazine > div.container > div.btn {position: absolute; left: 25%; top: 65%; font-size: 15px;  box-sizing: border-box; width: 120px; height: 35px;}
+section.magazine > div.container > div.btn > a {display: block;  line-height: 35px; text-align: center; border: 2px solid #000000; border-radius: 5px; transition: all 0.5s;}
+section.magazine > div.container > div.btn > a:hover {border: 2px solid transparent; background-color: #000000; color: #fff; text-decoration-line: underline;}
+
+section.store {background: url('../img/store_bg.jpg') center center no-repeat; background-size: cover; width: 100vw; height: 400px; overflow: hidden;}
+section.store > div.container {position: relative; max-width: 1100px; height: 100%; margin: 0 auto; /*background-color: blue;*/}
+section.store > div.container > h2 {background: url('../img/store_h2.png') center center no-repeat; position: absolute; /*right: 100px;*/ right: -70%; top: 100px; width: 385px; height: 54px; opacity: 0; transition: all 2s;}
+section.store > div.container > div.visual-01 {background: url('../img/store_img01.png') center center no-repeat; position: absolute; left: 250px; top: 150px; width: 228px; height: 228px; z-index: 5; opacity: 0; transition: opacity 2s;}
+section.store > div.container > div.visual-02 {background: url('../img/store_img02.png') center center no-repeat; position: absolute; left: 0; top: 0; width: 366px; height: 312px; opacity: 0; transition: opacity 2s;}
+section.store > div.container > div.visual-03 {background: url('../img/store_img03.png') center center no-repeat; position: absolute; left: 380px; top: -60px; width: 343px; height: 142px;}
+section.store > div.container > div.visual-04 {background: url('../img/store_img04.png') center center no-repeat; position: absolute; right: 0px; bottom: 0px; width: 230px; height: 102px;}
+section.store > div.container > div.txt {background: url('../img/store_txt.png') center center no-repeat; position: absolute; /*right: 117px;*/ right: -70%; top: 170px; width: 366px; height: 61px; opacity: 0; transition: all 2s; transition-delay: 0.3s;}
+section.store > div.container > div.btn {font-size: 15px; box-sizing: border-box; width: 120px; height: 35px; position: absolute; /*right: 340px;*/ right: -70%; bottom: 110px; transition: all 2s; opacity: 0; transition-delay: 0.5s;}
+section.store > div.container > div.btn > a {display: block; line-height: 35px; text-align: center; border: 2px solid #000; border-radius: 5px; transition: all 0.5s;}
+section.store > div.container > div.btn > a:hover {border: 1px solid transparent; background-color: #000; color: #fff; text-decoration-line: underline;}
+section.store.move > div.container > h2,
+section.store.move > div.container > div.txt,
+section.store.move > div.container > div.btn {opacity: 1;}
+section.store.move > div.container > h2 {right: 100px;}
+section.store.move > div.container > div.visual-01,
+section.store.move > div.container > div.visual-02 {opacity: 1;}
+section.store.move > div.container > div.txt {right: 117px;}
+section.store.move > div.container > div.btn {right: 340px;}
+
+/* sub coffee page */
+body.coffee #main {}
+body.coffee div.content {margin-top: 120px; width: 100vw; /*background-color: red;*/}
+div.sub-title {width: 100%; height: 95px; /*background-color: blue;*/}
+div.sub-title > div.container {position: relative; max-width: 1100px; height: 100%; margin: 0 auto; }
+div.sub-title > div.container > h2 {padding-top: 30px; /*background-color: orchid;*/}
+div.sub-title > div.container > ul {position: absolute; right: 0px; bottom: 10px;}
+div.sub-title > div.container > ul > li {position: relative; float: left; font-size: 12px;}
+div.sub-title > div.container > ul > li + li {margin-left: 15px;}
+div.sub-title > div.container > ul > li + li::before {background: url('../img/coffee/icon_arrow.png'); content: ''; position: absolute; left: -10px; top: 50%; transform: translate(0, -50%); width: 6px; height: 11px;}
+
+div.product-type-box {/*background-color: palegreen;*/}
+div.product-type-box > div.container {position: relative; max-width: calc(1100px) ; margin: 0 auto; height: calc(180px - 2px) ; border: 1px solid #d9d9d9; border-radius: 4px; padding: 30px 30px 0 30px; box-sizing: border-box; box-shadow: 0px 0px 3px rgba(0 0 0 / 70%);}
+div.product-type-box.on > div.container {height: 70px; background: red;}
+div.product-type-box > div.container::before {position: absolute; left: 50%; top: 75px; transform: translate(-50%, 0); content: ''; width: calc(100% - 60px); height: 1px; background-color: #d9d9d9;}
+div.product-type-box.on > div.container::before {display: none;}
+div.product-type-box > div.container > a.btn {position: absolute; right: 30px; top: 20px;}
+div.product-type-box.on > div.container > ul.type-list {visibility: hidden;}
+div.product-type-box > div.container > ul.type-list {margin-top: 50px; height: 35px; }
+div.product-type-box > div.container > ul.type-list > li {float: left; width: 200px; height: 35px; box-sizing: border-box; border-radius: 4px;}
+div.product-type-box > div.container > ul.type-list > li + li {margin-left: 15px;}
+div.product-type-box > div.container > ul.type-list > li > a {display: block; height: 100%; line-height: 35px;border-radius: 4px; text-align: center; color: #222222; font-size: 14px; background-color: #f4f4f1;}
+div.product-type-box > div.container > ul.type-list > li > a:hover {text-decoration: underline;}
+div.product-type-box > div.container > ul.type-list > li.on > a {color: #fff; background-color: #006633;}
+div.product-type-box.on > div.container > ul.flavor-list {visibility: hidden;}
+div.product-type-box > div.container > ul.flavor-list {/*background-color: purple;*/ margin-top: 10px; height: 18px; font-size: 12px; color: #666666;}
+div.product-type-box > div.container > ul.flavor-list > li {float: left;}
+div.product-type-box > div.container > ul.flavor-list > li + li {margin-left: 20px;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox {background: url('../img/coffee/ck_icon.jpg') 0 0 no-repeat; background-position: 5px 1px; vertical-align: middle;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox.checked {background: url('../img/coffee/ck_icon_on.jpg') 0 0 no-repeat; background-position: 5px 1px;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox > label,
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox > input {vertical-align: top;}
+div.product-type-box > div.container > ul.flavor-list > li > div.checkbox > input {opacity: 0;}
+
+div.detail-type { height: 80px;}
+div.detail-type > div.container {position: relative; max-width: 1100px; height: 100%; margin: 0 auto;}
+div.detail-type > div.container > div.box-inner {position: absolute; right: 0; bottom: 0; width: 243px; height: 40px; border: 1px solid #d9d9d9; border-radius: 4px; box-sizing: border-box;}
+div.detail-type > div.container > div.box-inner > div.box {width: 100%; height: 100%; border-radius: 4px; border: 1px solid transparent; }
+div.detail-type > div.container > div.box-inner > div.box > a {display: block; font-size: 14px; font-weight: 700; color:#444; line-height: 40px; padding-left: 5px; }
+div.detail-type > div.container > div.box-inner > div.box > a::after {content: ''; position: absolute; right: 5px; top: 50%; transform: translate(0, -50%); background: url('../img/coffee/sbox_arrow_down.png') no-repeat; width: 12px; height: 7px;}
+div.detail-type > div.container > div.box-inner ul.detail-list {display: none; position: absolute; left: -1px; bottom: -79px; width: 100%; background-color: #fff;}
+div.detail-type > div.container > div.box-inner ul.detail-list.show {display: block;}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li {width: calc(100% ); height: calc(40px - 2px); border: 1px solid #d9d9d9;}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li + li {border-top: none}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li > div.checkbox {background: url('../img/coffee/ck_icon.jpg') 0 0 no-repeat; background-position: 5px 13px;}
+div.detail-type > div.container > div.box-inner > ul.detail-list > li > div.checked {background: url('../img/coffee/ck_icon_on.jpg') 0 0 no-repeat; background-position: 5px 13px;}
+div.detail-type > div.container > div.box-inner > ul.detail-list input {opacity: 0;}
+div.detail-type > div.container > div.box-inner > ul.detail-list label {margin-left: 5px; line-height: 38px; font-size: 14px; font-weight: 700; color:#444;}
+
+div.product-list-box {margin-top: 50px; padding-bottom: 100px;}
+div.product-list-box > div.container { max-width: 1100px; margin: 0 auto; /*background-color: #006633;*/}
+div.product-list-box > div.container > ul.product-list {display: none; width: 100%; /*background-color: orange;*/}
+div.product-list-box > div.container > ul.product-list.on {display: block;}
+div.product-list-box > div.container > ul.product-list > li {display: none;}
+div.product-list-box > div.container > ul.product-list.on > li.on {display: block;}
+div.product-list-box > div.container > ul.product-list > li + li {margin-top: 50px;}
+div.product-list-box > div.container > ul.product-list > li > div.product-name {width: 100%; height: 60px; font-size: 18px; color: #222222; font-weight: 800; box-sizing: border-box; background-color: #f4f4f2;}
+div.product-list-box > div.container > ul.product-list > li > div.product-name > a {display: inline-block; position: relative; margin-left: 60px; line-height: 60px;}
+div.product-list-box > div.container > ul.product-list > li > div.product-name > a::before {position: absolute; left: -50px; top: 50%; transform: translate(0, -50%); content: ''; width: 40px; height: 40px; background: url('../img/coffee/icon_blond.png') no-repeat;} 
+div.product-list-box > div.container > ul.product-list > li:nth-child(3) > div.product-name > a::before {background: url('../img/coffee/icon_dark.png') no-repeat;}
+div.product-list-box > div.container > ul.product-list > li:nth-child(4) > div.product-name > a::before {background: url('../img/coffee/icon_flavor.png') no-repeat;}
+div.product-list-box > div.container > ul.product-list > li:last-child > div.product-name > a::before {background: url('../img/coffee/icon_reserve_bean.png') no-repeat;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list {width: 100%; margin-top: 30px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list::after {display: block; content: ''; clear: both;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li {position: relative; float: left; width: calc(25% - 7.5px);  height: 300px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(5),
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(6),
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(7),
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(8) {margin-top: 50px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li + li {margin-left: 10px;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li:nth-child(5) {margin-left: 0px;}
+div.product-list-box > div.container > ul.bean > li.blonde > ul.product-image-list > li:first-child::after {position: absolute; left: 75px; bottom: 60px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_season_limit.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.bean > li.medium > ul.product-image-list > li:first-child::after {position: absolute; left: 75px; bottom: 60px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_season_limit.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > a {position: relative; display: block; height: 280px; overflow: hidden; background-size: red;}
+div.product-list-box > div.container > ul.bean > li.blonde > ul.product-image-list > li:first-child > a::after {position: absolute; left: 30px; bottom: 40px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_new.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.bean > li.medium > ul.product-image-list > li:first-child > a::after {position: absolute; left: 30px; bottom: 40px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_new.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.bean > li.reserve > ul.product-image-list > li:first-child > a::after,
+div.product-list-box > div.container > ul.bean > li.reserve > ul.product-image-list > li:nth-child(2) > a::after,
+div.product-list-box > div.container > ul.bean > li.reserve > ul.product-image-list > li:nth-child(3) > a::after {position: absolute; left: 30px; bottom: 40px; content: ''; width: 45px; height: 45px; background: url('../img/coffee/icon_new.png') 0 0 no-repeat; background-size: cover;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > a > img {width: 100%; height: 280px; transition: transform 1s;}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > a > img:hover {transform: scale(1.1);}
+div.product-list-box > div.container > ul.product-list > li > ul.product-image-list > li > span {display: block; text-align: center; font-size: 14px; font-weight: 600; color: #444;}
+
+#footer {width: 100vw; height: 580px; background-color: #2c2a29;}
+#footer > div.container {position: relative; max-width: 1200px; height: 100%; margin: 0 auto; /*background-color: #ffa59c*/}
+#footer > div.container > div.logo {position: absolute; right: 0; top: 50px; background: url('../img/footer_logo.png') center center no-repeat; width: 14px; height: 142px;}
+#footer > div.container > div.top {/*background-color: #64a70b;*/ width: 100%; height: 250px;}
+#footer > div.container > div.top > nav {/*background-color: bisque;*/ width: 100%; height: 100%;}
+#footer > div.container > div.top > nav > ul {/*background-color: cadetblue;*/ width: 100%; height: 100%; font-size: 14px;}
+#footer > div.container > div.top > nav > ul > li {/*background-color: orange;*/ float: left; width: 20%; margin-top: 30px; color: #fff;}
+#footer > div.container > div.top > nav > ul > li > a {font-size: 14px;}
+#footer > div.container > div.top > nav > ul > li > ul {margin-top: 20px; font-size: 12px;}
+#footer > div.container > div.top > nav > ul > li > ul > li + li {margin-top: 3px;}
+#footer > div.container > div.middle-top {display: none;}
+#footer > div.container > div.middle-bottom {/*background-color: darkblue;*/ width: 100%; height: 40px;}
+#footer > div.container > div.middle-bottom > div.box {/*background-color: darkorange;*/width: 100%; height: 100%;}
+#footer > div.container > div.middle-bottom > div.box > ul.reward {/*background-color: darkorchid;*/ width: 100%; height: 100%;}
+#footer > div.container > div.middle-bottom > div.box > ul.reward > li {float: left;}
+#footer > div.container > div.middle-bottom > div.controller {display: none;}
+#footer > div.container > div.down {/*background-color: deepskyblue;*/ width: 100%; height: 150px; margin-top: 60px;}
+#footer > div.container > div.down > div.copy-right {/*background-color: fuchsia;*/ width: 100%; height: 15px; text-align: center;}
+#footer > div.container > div.down > div.copy-right > ul {width: 100%; height: 100%; /*background-color:lightcoral;*/}
+#footer > div.container > div.down > div.copy-right > ul > li {position: relative; font-size: 12px; float: left; }
+#footer > div.container > div.down > div.copy-right > ul > li:first-child {margin-left: 50px; color: #00b050}
+#footer > div.container > div.down > div.copy-right > ul > li + li {margin-left: 30px; color: #fff;}
+#footer > div.container > div.down > div.copy-right > ul > li + li::after {position: absolute; left: -15px; top: 0; content: '|'; color: #000000;}
+#footer > div.container > div.down > div.copy-right > ul > li > a:hover {text-decoration-line: underline;}
+#footer > div.container > div.down > div.btn {/*background-color: gainsboro;*/ width: 100%; height: 35px; margin-top: 10px;}
+#footer > div.container > div.down > div.btn > ul {/*background-color: #00704A;*/ width: 100%; height: 100%;}
+#footer > div.container > div.down > div.btn > ul > li {float: left;  box-sizing: border-box; width: 110px; height: 30px;}
+#footer > div.container > div.down > div.btn > ul > li:first-child {margin-left: 380px;}
+#footer > div.container > div.down > div.btn > ul > li + li {margin-left: 10px;}
+#footer > div.container > div.down > div.btn > ul > li > a {/*background: cadetblue;*/ font-size: 12px; display: block; text-align: center; line-height: 30px; border: 1px solid #fff; border-radius: 5px; color: #fff }
+#footer > div.container > div.down > div.btn > ul > li > a:hover {text-decoration-line: underline;}
+#footer > div.container > div.down > div.info {/*background-color: indianred;*/ font-size: 12px; color: #999; width: 100%; height: 15px; margin-top: 30px;}
+#footer > div.container > div.down > div.info > ul {/*background-color: chartreuse;*/ width: 100%; height: 100%;}
+#footer > div.container > div.down > div.info > ul > li { float: left; }
+#footer > div.container > div.down > div.info > ul > li:first-child {margin-left: 250px;}
+#footer > div.container > div.down > div.info > ul > li + li {margin-left: 20px;}
+#footer > div.container > div.down > div.info span.info-en {/*background-color: #D1131D;*/ display: inline-block; margin: 10px 0 0 450px;}
+
+@media screen and (max-width: 1300px) {
+  #main-visual > div.container > ul > li:first-child {width: 400px; height: 320px; left: 9%; top: 30%;}
+  #main-visual > div.container > ul > li:nth-child(2) {width: 300px; height: 420px; left: 42%; top: 15%;}
+  #main-visual > div.container > ul > li:last-child {width: 400px; height: 450px; right: 0%;}
+}
+
+@media screen and (max-width: 1250px) {
+  #footer > div.container > div.logo {right: 50px;}
+}
+@media screen and (max-width: 1200px) { 
+  /* sub coffee page */
+  div.sub-title > div.container {width: 960px; }
+  div.product-type-box > div.container {width: 960px; height: 180px; box-sizing: border-box;}
+  div.sub-title > div.container > h2 {padding-top: 30px;}
+  div.detail-type > div.container {width: 960px;}
+
+  
+  #footer > div.container {width: 100%;}
+  #footer > div.container > div.top > nav > ul > li:nth-child(2) {margin-left: 170px;}
+
+  #footer > div.container > div.down > div.copy-right {text-align: center;}
+  #footer > div.container > div.top > nav > ul > li {width: 15%;}
+  #footer > div.container > div.top > nav > ul > li:first-child {margin-left: 200px;}
+
+  #footer > div.container > div.middle {height: 80px;}
+  #footer > div.container > div.middle > div.box > ul.reward {width: 762px; margin-left: 250px;}
+  #footer > div.container > div.middle > div.box > ul.reward > li {width: 254px;}
+
+  #footer > div.container > div.down > div.copy-right {height: 35px;}
+  #footer > div.container > div.down > div.copy-right > ul > li:first-child {margin-left: 100px;}
+  #footer > div.container > div.down > div.copy-right > ul > li:last-child {margin-left: 525px; margin-top: 5px;}
+  #footer > div.container > div.down > div.copy-right > ul > li:last-child::after {display: none;}
+  #footer > div.container > div.down > div.btn {margin-top: 10px;}
+
+  #footer > div.container > div.middle-bottom {width: 100%; height: 80px;}
+  #footer > div.container > div.middle-bottom > div.box {width: 100%; height: 100%;}
+  #footer > div.container > div.middle-bottom > div.box > ul.reward {width: 762px; height: 100%; margin: 0 auto;}
+  #footer > div.container > div.middle-bottom > div.box > ul.reward > li {float: left; width: 254px; height: 40px;}
+
+}
+
+@media screen and (max-width: 1150px) {
+  #header .wrapper h2 {left: 50px;}
+
+  section.store > div.container > div.visual-02 {left: 50px;}
+  section.store > div.container > div.visual-04 {right: 50px;}
+
+  div.product-list-box > div.container {width: 960px;}
+
+}
+
+@media screen and (max-width: 1110px) {
+  #gnb > ul > li > ul {left: 30px;}
+  #header::before {display: none;}
+  #gnb > ul > li > div.txt-box {display: none;}
+  #gnb > ul > li:first-child > ul > li { width: 25%;}
+  #gnb > ul > li:first-child > ul > li:nth-child(6) {margin-top: 20px;}
+
+  section.banner-slide > p.control > a.play {left: 46%;}
+  section.reward > div.container > div.info-box > div.top-info > div.top-info-btn {right: 80px;}
+  section.reward > div.container > div.info-box > div.bottom-info > div.bottom-info-btn {right: 80px;}
+}
+
+@media screen and (max-width: 1100px) {
+  #gnb > ul {width: 800px; height: 100%; margin-left: 250px;}
+
+  section.favorite > div.container > h2 {transform: scale(0.8);}
+  section.favorite > div.container > div.txt-box {transform: scale(0.8);}
+  section.favorite > div.container > div.favorite-image {transform: scale(0.8);}
+  section.favorite > div.container > div.favorite-btn {left: 205px;}
+
+  section.magazine > div.container > h2 {width: 540px; height: 90px; left: 5%;}
+  section.magazine > div.container > div.image {width: 300px; height: 320px;}
+}
+
+@media screen and (max-width: 1050px) {
+  section.notice > div.container > div.left-notice > span.btn {right: 15%;}
+
+  #footer > div.container > div.top > nav > ul > li:first-child {margin-left: 150px;}
+  
+  #footer > div.container > div.middle > div.box > ul.reward {width: 762px; margin-left: 200px;}
+
+  #footer > div.container > div.down > div.copy-right > ul > li:first-child {margin-left: 50px;}
+  #footer > div.container > div.down > div.copy-right > ul > li:last-child {margin-left: 475px; }
+}
+
